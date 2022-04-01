@@ -1,0 +1,2 @@
+INSERT INTO tb_movie(name, image, adress) VALUES ('Spider-Man: churrasco em casa','https://f001.backblazeb2.com/file/papocine/2021/11/20211116-homem-aranha-sem-volta-para-casa-papo-de-cinema-cartaz.jpeg', 'https://drive.google.com/file/d/11xccdvuhFSdmmbdhqHztIR5sJsb3y2ap/preview');
+INSERT INTO tb_movie(name, image, adress) VALUES ('NanatsunoTaizai','http://pm1.narvii.com/6882/0a966754c09fa958ad07171e1a3793d16648de89r1-602-850v2_uhq.jpg', 'https://www.youtube.com/embed/NVX3pkqHsKI');
