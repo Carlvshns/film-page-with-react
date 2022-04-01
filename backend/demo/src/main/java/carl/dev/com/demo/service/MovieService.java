@@ -1,7 +1,5 @@
 package carl.dev.com.demo.service;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -22,8 +20,8 @@ public class MovieService {
         return movieRepository.findAll(pageable);
     }
 
-    public List<Movie> findByName(String name){
-        return movieRepository.findByNameIgnoreCaseContaining(name);
+    public Page<Movie> findByName(String name, Pageable pageable){
+        return movieRepository.findByNameIgnoreCaseContaining(name, pageable);
     }
 
     public Movie findById(long id){

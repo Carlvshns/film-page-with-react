@@ -33,7 +33,7 @@ public class MovieController {
     }
 
     @GetMapping(path = "/search/{name}")
-    public ResponseEntity<?> findByName(@PathVariable String name){
-        return new ResponseEntity<>(movieService.findByName(name), HttpStatus.OK);
+    public ResponseEntity<Page<Movie>> findByName(@PathVariable String name, Pageable pageable){
+        return new ResponseEntity<>(movieService.findByName(name, pageable), HttpStatus.OK);
     }
 }
