@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 type Props = {
-    movieName : string
+    movieName : any
 }
 
 function MovieResult( { movieName } : Props){

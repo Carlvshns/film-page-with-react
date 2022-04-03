@@ -6,7 +6,7 @@ import MovieCard from "../MovieCard";
 import Pagination from "../Pagination";
 
 type Props = {
-    movieName : string;
+    movieName : any;
 }
 
 function SearchResult( {movieName} : Props){

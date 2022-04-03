@@ -2,7 +2,7 @@ import MovieResult from "../MovieResult";
 
 function ListingSearch( movieName : any){
     return(
-        <MovieResult movieName={`${movieName}`} />
+        <MovieResult movieName={movieName} />
     )
 }
 

@@ -6,7 +6,7 @@ function Search(){
     const params = useParams();
     
     return(
-        <SearchResult movieName={`${params.movieName}`} />
+        <SearchResult movieName={params.movieName} />
     )
 }
 
