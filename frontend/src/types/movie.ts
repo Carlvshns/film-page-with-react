@@ -3,6 +3,8 @@ export type Movie = {
     name: string;
     image: string;
     adress: string;
+    synopsis: string;
+    genre: string;
 }
 
 export type MoviePage = {

@@ -27,5 +27,17 @@ public class MovieService {
     public Movie findById(long id){
         return movieRepository.findById(id).get();
     }
+
+    public Page<Movie> findGenreSuperHeroi(){
+        return movieRepository.findGenreSuperHeroi();
+    }
+
+    public Page<Movie> findGenreFilmeDeAnime(){
+        return movieRepository.findGenreFilmeDeAnime();
+    }
+
+    public Page<Movie> findByGenre(String genre, Pageable pageable){
+        return movieRepository.findByGenreIgnoreCaseContaining(genre, pageable);
+    }
    
 }

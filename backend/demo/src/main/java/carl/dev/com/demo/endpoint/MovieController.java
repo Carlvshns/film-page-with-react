@@ -36,4 +36,20 @@ public class MovieController {
     public ResponseEntity<Page<Movie>> findByName(@PathVariable String name, Pageable pageable){
         return new ResponseEntity<>(movieService.findByName(name, pageable), HttpStatus.OK);
     }
+
+    /*@GetMapping(path = "/genre/super_heroi")
+    public ResponseEntity<Page<Movie>> findGenreSeperHeroi(){
+        return new ResponseEntity<>(movieService.findGenreSuperHeroi(), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/genre/filme_de_anime")
+    public ResponseEntity<Page<Movie>> findGenreFilmeDeAnime(){
+        return new ResponseEntity<>(movieService.findGenreFilmeDeAnime(), HttpStatus.OK);
+    }*/
+
+    @GetMapping(path = "/genre/{genre}")
+    public ResponseEntity<Page<Movie>> findGenre(@PathVariable String genre, Pageable pageable){
+        return new ResponseEntity<>(movieService.findByGenre(genre, pageable), HttpStatus.OK);
+    }
+
 }

@@ -16,6 +16,8 @@ public class Movie {
     private String name;
     private String image;
     private String adress;
+    private String synopsis;
+    private String genre;
 
     public Movie() {
     }
@@ -46,5 +48,22 @@ public class Movie {
     }
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public String getSynopsis() {
+        return synopsis;
+    }
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+    public void setGenre(String genre) {
+        this.genre = genre;
     } 
+
+    
+    
 }
