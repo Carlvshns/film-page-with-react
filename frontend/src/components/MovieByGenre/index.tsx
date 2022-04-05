@@ -13,8 +13,6 @@ function MovieByGenre( {movieGenre} : Props){
 
     const [pageNumber, setPageNumber] = useState(0);
 
-    console.log(setPageNumber.toString);
-
     const[page, setPage] = useState<MoviePage>({
         content: [],
         last: true,
@@ -34,10 +32,14 @@ function MovieByGenre( {movieGenre} : Props){
         });
     }, [movieGenre, pageNumber]);
 
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
+
     return (
         <>
 
-        <Pagination page={page} />
+        <Pagination page={page} onChange={handlePageChange} />
         <div className="listing-container">
             <div className="rows">
                 {page.content.map(movie =>(

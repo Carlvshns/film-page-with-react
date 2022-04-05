@@ -34,10 +34,14 @@ function SearchResult( {movieName} : Props){
         });
     }, [movieName, pageNumber]);
 
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
+
     return (
         <>
 
-        <Pagination page={page} />
+        <Pagination page={page} onChange={handlePageChange} />
         <div className="listing-container">
             <div className="rows">
                 {page.content.map(movie =>(
