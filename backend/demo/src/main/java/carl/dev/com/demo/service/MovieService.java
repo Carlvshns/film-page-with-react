@@ -28,12 +28,12 @@ public class MovieService {
         return movieRepository.findById(id).get();
     }
 
-    public Page<Movie> findGenreSuperHeroi(){
-        return movieRepository.findGenreSuperHeroi();
+    public Page<Movie> findGenreSuperHeroi(Pageable pageable){
+        return movieRepository.findGenreSuperHeroi(pageable);
     }
 
-    public Page<Movie> findGenreFilmeDeAnime(){
-        return movieRepository.findGenreFilmeDeAnime();
+    public Page<Movie> findGenreFilmeDeAnime(Pageable pageable){
+        return movieRepository.findGenreFilmeDeAnime(pageable);
     }
 
     public Page<Movie> findByGenre(String genre, Pageable pageable){

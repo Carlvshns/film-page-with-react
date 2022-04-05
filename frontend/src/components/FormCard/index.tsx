@@ -27,7 +27,7 @@ function FormCard( { movieId } : Props){
             </div>
         <div>
 
-        <iframe key={movie?.adress} src={movie?.adress} width="640" height="480" ref={inputRef} allow="autoplay">
+        <iframe src={movie?.adress} width="640" height="480" ref={inputRef} allow="autoplay">
         </iframe>
         </div>
         </div>

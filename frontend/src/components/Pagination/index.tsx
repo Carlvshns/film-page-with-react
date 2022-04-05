@@ -6,7 +6,7 @@ type Props = {
 
 function Pagination( {page} : Props){
     return(
-        <h2>Botoes de navegacao</h2>)
+        <h2 id="paginationButton">Botoes de navegacao</h2>)
 }
 
 export default Pagination;

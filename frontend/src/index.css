@@ -39,7 +39,14 @@ code {
   border-radius: 8px 8px 8px 8px;
 }
 .movie-card-3rd-container{
-  height: 60.94px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 200px;
+  margin-left: 12px;
+
 }
 img{
   margin-left: 12.5px;
@@ -47,9 +54,38 @@ img{
   height: 300px;
 }
 #assistirButton{
-  float: right;
-  margin: 12.5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
 #nameMovieInForm{
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#paginationButton{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#movieName{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#synopsis{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#genreButton{
+  background-color: rgba(255, 255, 255, 0);
+  border: rgba(255, 255, 255, 0);
+  color: black;
 }

@@ -47,7 +47,7 @@ public class MovieController {
         return new ResponseEntity<>(movieService.findGenreFilmeDeAnime(), HttpStatus.OK);
     }*/
 
-    @GetMapping(path = "/genre/{genre}")
+    @GetMapping(path = "/findByGenre/{genre}")
     public ResponseEntity<Page<Movie>> findGenre(@PathVariable String genre, Pageable pageable){
         return new ResponseEntity<>(movieService.findByGenre(genre, pageable), HttpStatus.OK);
     }

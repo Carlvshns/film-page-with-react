@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
+import MovieByGenre from "../../components/MovieByGenre";
 
 function Genre(){
 
     const params = useParams();
 
     return(
-        <h3>{params}</h3>
+        <MovieByGenre movieGenre={params.movieGenre} />
     );
 }
 

@@ -14,8 +14,8 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     Page<Movie> findByGenreIgnoreCaseContaining(String genre, Pageable pageable);
 
     @Query("select c from Movie c where c.genre = 'SUPER-HEROI' ")
-    Page<Movie> findGenreSuperHeroi();
+    Page<Movie> findGenreSuperHeroi(Pageable pageable);
 
     @Query("select c from Movie c where c.genre = 'FILME DE ANIME' ")
-    Page<Movie> findGenreFilmeDeAnime();
+    Page<Movie> findGenreFilmeDeAnime(Pageable pageable);
 }
