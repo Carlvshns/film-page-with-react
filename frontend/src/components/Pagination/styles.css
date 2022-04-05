@@ -51,3 +51,6 @@
 .dsmovie-flip-horizontal {
     transform: rotate(180deg);
 }
+#pageNumbers{
+    color: #ffffff;
+}

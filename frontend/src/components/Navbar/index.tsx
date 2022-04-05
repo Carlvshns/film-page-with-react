@@ -35,7 +35,7 @@ function Navbar() {
             <nav className="navbar navbar-expand-sm" id="theNavbar">
                 <form className="form-inline"  id="theFormInNavbar" onSubmit={handleSubmit}>
                     <a href="https://github.com/Carlvshns" target="_blank" rel="noreferrer">
-                    <img src="https://marcas-logos.net/wp-content/uploads/2020/03/GITHUB-LOGO.png" alt="github-logo" id="gitLogo" />
+                    <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-bleu.png" alt="github-logo" id="gitLogo" />
                     </a>
                     <label htmlFor="input"></label>
                     <input className="form-control mr-sm-2" type="text" name="input" id="input" placeholder="Pesquise pelo nome de um anime..."/ >

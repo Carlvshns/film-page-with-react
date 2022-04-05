@@ -14,15 +14,16 @@ code {
 }
 #theNavbar{
   height: 70px;
-  background-color: rgb(255, 35, 82);
+  background-color: rgb(255, 41, 41);
 }
 #theFormInNavbar{
   display: contents;
 }
 #gitLogo{
-  width: 65px;
+  width: 55px;
   height: 45px;
   margin-left: 15px;
+  margin-right: 5px;
 }
 #input{
   width: 500px;
@@ -35,7 +36,7 @@ code {
 .movie-card-container{
   width: 225px;
   float: left;
-  background-color: rgb(211, 202, 204);
+  background-color: rgb(255, 255, 255);
   margin-left: 4px;
   border-radius: 8px 8px 8px 8px;
 }
@@ -60,6 +61,7 @@ img{
   justify-content: center;
   align-items: center;
   margin: 5px;
+  color: #ffffff;
 }
 #nameMovieInForm{
   display: flex;
@@ -93,7 +95,7 @@ img{
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: rgb(255, 35, 82);
+  background-color: rgb(255, 41, 41);
   color: white;
   padding: 16px;
   font-size: 16px;
