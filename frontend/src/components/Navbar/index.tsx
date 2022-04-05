@@ -22,6 +22,13 @@ function Navbar() {
         
         return window.location.replace(`/genre/anime`);
     };
+
+    const inicioSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/`);
+    };
     
     return(
         <header>
@@ -34,11 +41,19 @@ function Navbar() {
                     <input className="form-control mr-sm-2" type="text" name="input" id="input" placeholder="Pesquise pelo nome de um anime..."/ >
                     <button className="btn btn-success" type="submit" value="submit" id="buttonSearch">Pesquisar</button>
                 </form>
-                <form onSubmit={superHeroiSubmit}>
+                <div className="dropdown">
+                    <button className="dropbtn">Generos <i className="fa fa-caret-down"></i></button>
+                    <div className="dropdown-content">
+                    <form onSubmit={superHeroiSubmit}>
                     <button className="btn btn-success" type="submit" value="submit" id="genreButton">Super-heroi</button>
-                </form>
-                <form onSubmit={filmeDeAnimeSubmit}>
+                    </form>
+                    <form onSubmit={filmeDeAnimeSubmit}>
                     <button className="btn btn-success" type="submit" value="submit" id="genreButton">Filmes de Anime</button>
+                    </form>
+                    </div>
+                </div>
+                <form onSubmit={inicioSubmit}>
+                    <button className="btn btn-success" type="submit" value="submit" id="genreButton">Pagina Inicial</button>
                 </form>
             </nav>
         </header>
