@@ -28,7 +28,7 @@ function SearchResult( {movieName} : Props){
     });
     
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/search/${movieName}?size=4&page=${pageNumber}&sort=name`).then(response => {
+        axios.get(`${BASE_URL}/movies/search/${movieName}?size=12&page=${pageNumber}&sort=name`).then(response => {
             const data = response.data as MoviePage;
             setPage(data);
         });

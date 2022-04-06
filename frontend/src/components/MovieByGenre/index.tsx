@@ -26,7 +26,7 @@ function MovieByGenre( {movieGenre} : Props){
     });
     
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/findByGenre/${movieGenre}?size=4&page=${pageNumber}&sort=name`).then(response => {
+        axios.get(`${BASE_URL}/movies/findByGenre/${movieGenre}?size=12&page=${pageNumber}&sort=name`).then(response => {
             const data = response.data as MoviePage;
             setPage(data);
         });
