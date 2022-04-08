@@ -41,6 +41,9 @@ code {
   border-radius: 8px 8px 8px 8px;
   margin-bottom: 5px;
 }
+#movieCardName{
+  color: #000000;
+}
 .movie-card-3rd-container{
   display: flex;
   flex-direction: row;
@@ -72,18 +75,6 @@ img{
   align-items: center;
 }
 #paginationButton{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-#movieName{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-#synopsis{
   display: flex;
   flex-direction: row;
   justify-content: center;
