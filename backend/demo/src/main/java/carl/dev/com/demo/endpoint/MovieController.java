@@ -48,7 +48,7 @@ public class MovieController {
     }*/
 
     @GetMapping(path = "/findByGenre/{genre}")
-    public ResponseEntity<Page<Movie>> findGenre(@PathVariable String genre, Pageable pageable){
+    public ResponseEntity<Page<Movie>> findByGenre(@PathVariable String genre, Pageable pageable){
         return new ResponseEntity<>(movieService.findByGenre(genre, pageable), HttpStatus.OK);
     }
 
