@@ -19,7 +19,7 @@ public class MovieRepositoryTest {
     private MovieRepository movieRepository;
 
     @Test
-    @DisplayName("Find All returns list page of Movies when Sucessful")
+    @DisplayName("FindAll returns list page of Movies when Sucessful")
     void findAll_ReturnsPageOfMovies_WhenSucessful(){
         Movie movieToBeSaved = MovieCreator.movieCreator();
         
@@ -33,7 +33,7 @@ public class MovieRepositoryTest {
     }
 
     @Test
-    @DisplayName("Find By Id return Movie when Sucessful")
+    @DisplayName("FindById return Movie when Sucessful")
     void findById_ReturnsMovie_WhenSucessful(){
         Movie movieToBeSaved = MovieCreator.movieCreator();
         
@@ -45,7 +45,7 @@ public class MovieRepositoryTest {
     }
 
     @Test
-    @DisplayName("Find By Name returns list page of Movies when Sucessful")
+    @DisplayName("FindByName returns list page of Movies when Sucessful")
     void findByName_ReturnsPageOfMovies_WhenSucessful(){
         Movie movieToBeSaved = MovieCreator.movieCreator();
         
@@ -60,7 +60,7 @@ public class MovieRepositoryTest {
     }
 
     @Test
-    @DisplayName("Find By Genre returns list page of Movies when Sucessful")
+    @DisplayName("FindByGenre returns list page of Movies when Sucessful")
     void findByGenre_ReturnsPageOfMovies_WhenSucessful(){
         Movie movieToBeSaved = MovieCreator.movieCreator();
         
