@@ -23,6 +23,13 @@ function Navbar() {
         return window.location.replace(`/genre/anime`);
     };
 
+    const comediaSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/comedia`);
+    };
+
     const inicioSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
@@ -49,6 +56,9 @@ function Navbar() {
                     </form>
                     <form onSubmit={filmeDeAnimeSubmit}>
                     <button className="btn btn-success" type="submit" value="submit" id="genreButton">Filmes de Anime</button>
+                    </form>
+		    <form onSubmit={comediaSubmit}>
+                    <button className="btn btn-success" type="submit" value="submit" id="genreButton">Comedia</button>
                     </form>
                     </div>
                 </div>

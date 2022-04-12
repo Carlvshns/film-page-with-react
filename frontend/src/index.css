@@ -138,6 +138,7 @@ img{
 }
 @media screen and (max-width: 768px) {
   .movie-card-container{width: auto; height: auto; margin-bottom: 15px; margin-left: 25px; }
+  #input{width: 290px;}
 }
 @media screen and (max-width: 729px) {
   .movie-card-container{width: auto; height: auto; margin-bottom: 15px; margin-left: 20px; }
