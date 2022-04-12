@@ -30,6 +30,55 @@ function Navbar() {
         return window.location.replace(`/genre/comedia`);
     };
 
+    const aventuraSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/aventura`);
+    };
+
+    const suspenseSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/suspense`);
+    };
+
+    const ficcaoSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/ficcao`);
+    };
+
+    const romanceSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/romance`);
+    };
+
+    const acaoSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/acao`);
+    };
+
+    const sobrenaturalSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/sobrenatural`);
+    };
+
+    const desenhoSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/desenho`);
+    };
+
     const inicioSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
@@ -45,20 +94,41 @@ function Navbar() {
                     <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-bleu.png" alt="github-logo" id="gitLogo" />
                     </a>
                     <label htmlFor="input"></label>
-                    <input className="form-control mr-sm-2" type="text" name="input" id="input" placeholder="Pesquise pelo nome de um anime..."/ >
+                    <input className="form-control mr-sm-2" type="text" name="input" id="input" placeholder="Pesquise pelo nome de um filme..."/ >
                     <button className="btn btn-success" type="submit" value="submit" id="buttonSearch">Pesquisar</button>
                 </form>
                 <div className="dropdown">
                     <button className="dropbtn">Generos <i className="fa fa-caret-down"></i></button>
                     <div className="dropdown-content">
                     <form onSubmit={superHeroiSubmit}>
-                    <button type="submit" value="submit" id="genreButton">Super-heroi</button>
+                        <button type="submit" value="submit" id="genreButton">Super-heroi</button>
                     </form>
                     <form onSubmit={filmeDeAnimeSubmit}>
-                    <button type="submit" value="submit" id="genreButton">Filmes de Anime</button>
+                        <button type="submit" value="submit" id="genreButton">Filmes de Anime</button>
                     </form>
-		    <form onSubmit={comediaSubmit}>
-                    <button type="submit" value="submit" id="genreButton">Comedia</button>
+		            <form onSubmit={comediaSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Comedia</button>
+                    </form>
+                    <form onSubmit={aventuraSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Aventura</button>
+                    </form>
+                    <form onSubmit={suspenseSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Suspense</button>
+                    </form>
+                    <form onSubmit={ficcaoSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Ficçao-Cientifica</button>
+                    </form>
+                    <form onSubmit={romanceSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Romance</button>
+                    </form>
+                    <form onSubmit={acaoSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Açao</button>
+                    </form>
+                    <form onSubmit={sobrenaturalSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Sobrenatural</button>
+                    </form>
+                    <form onSubmit={desenhoSubmit}>
+                        <button type="submit" value="submit" id="genreButton">Desenhos</button>
                     </form>
                     </div>
                 </div>
