@@ -52,13 +52,13 @@ function Navbar() {
                     <button className="dropbtn">Generos <i className="fa fa-caret-down"></i></button>
                     <div className="dropdown-content">
                     <form onSubmit={superHeroiSubmit}>
-                    <button className="btn btn-success" type="submit" value="submit" id="genreButton">Super-heroi</button>
+                    <button type="submit" value="submit" id="genreButton">Super-heroi</button>
                     </form>
                     <form onSubmit={filmeDeAnimeSubmit}>
-                    <button className="btn btn-success" type="submit" value="submit" id="genreButton">Filmes de Anime</button>
+                    <button type="submit" value="submit" id="genreButton">Filmes de Anime</button>
                     </form>
 		    <form onSubmit={comediaSubmit}>
-                    <button className="btn btn-success" type="submit" value="submit" id="genreButton">Comedia</button>
+                    <button type="submit" value="submit" id="genreButton">Comedia</button>
                     </form>
                     </div>
                 </div>

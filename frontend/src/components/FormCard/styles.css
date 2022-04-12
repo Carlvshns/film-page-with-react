@@ -4,6 +4,8 @@
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-width: 1px;
   }
   #synopsis{
     display: flex;
@@ -28,7 +30,21 @@
   margin: 0 auto;
   margin-top: 3px;
   margin-bottom: 3px;
+  font-family: Helvetica;
 }
 #whatsappButton:hover{
+  text-decoration: none;
+}
+#facebookButton{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-family: 'Segoe UI';
+}
+#facebookButton:hover{
   text-decoration: none;
 }

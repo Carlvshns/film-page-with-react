@@ -14,7 +14,7 @@ function MovieCard( { movie } : Props){
                 <div className="movie-card-3rd-container">
                 <h5 id="movieCardName">{movie.name}</h5>
                 </div>
-                <Link to={`/form/${movie.id}`}>
+                <Link to={`/form/${movie.id}`} style={{ textDecoration: 'none'}}>
                     <div className="btn btn-primary" id="assistirButton">Assistir</div>
                 </Link>
             </div>

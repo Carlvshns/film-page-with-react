@@ -81,9 +81,14 @@ img{
   align-items: center;
 }
 #genreButton{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ffffff00;
   border: rgba(255, 255, 255, 0);
   color: rgb(255, 255, 255);
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+#genreButton:hover{
+  border: none;
 }
 
 /* Dropdown Button */
@@ -108,7 +113,7 @@ img{
   position: absolute;
   background-color: #003cff;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
   z-index: 1;
 }
 
@@ -121,7 +126,7 @@ img{
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content .btn:hover {background-color: #ddd;}
+.dropdown-content .btn:hover {background-color: none;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
