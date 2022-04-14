@@ -45,6 +45,7 @@ function FormCard( { movieId } : Props){
         <iframe id="iframeDiv" src={movie?.adress} width="640" height="480" ref={inputRef} allow="autoplay">
         </iframe>
         </div>
+        <div id="share">
         <form onSubmit={shareWhatsappSubmit}>
             <button id="whatsappButton" className="btn btn-success" type="submit" value="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-whatsapp" viewBox="0 0 16 16">
@@ -61,6 +62,7 @@ function FormCard( { movieId } : Props){
                 <span>&nbsp;Compartilhar no Facebook</span>
             </button>
         </form>
+        </div>
         </div>
     )
 }
