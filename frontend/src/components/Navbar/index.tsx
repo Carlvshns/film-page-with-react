@@ -101,39 +101,39 @@ function Navbar() {
                     <button className="dropbtn">Generos <i className="fa fa-caret-down"></i></button>
                     <div className="dropdown-content">
                     <form onSubmit={superHeroiSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Super-heroi</button>
+                        <button type="submit" value="submit" className="genreButton">Super-heroi</button>
                     </form>
                     <form onSubmit={filmeDeAnimeSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Filmes de Anime</button>
+                        <button type="submit" value="submit" className="genreButton">Filmes de Anime</button>
                     </form>
 		            <form onSubmit={comediaSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Comedia</button>
+                        <button type="submit" value="submit" className="genreButton">Comedia</button>
                     </form>
                     <form onSubmit={aventuraSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Aventura</button>
+                        <button type="submit" value="submit" className="genreButton">Aventura</button>
                     </form>
                     <form onSubmit={suspenseSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Suspense</button>
+                        <button type="submit" value="submit" className="genreButton">Suspense</button>
                     </form>
                     <form onSubmit={ficcaoSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Ficçao-Cientifica</button>
+                        <button type="submit" value="submit" className="genreButton">Ficçao-Cientifica</button>
                     </form>
                     <form onSubmit={romanceSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Romance</button>
+                        <button type="submit" value="submit" className="genreButton">Romance</button>
                     </form>
                     <form onSubmit={acaoSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Açao</button>
+                        <button type="submit" value="submit" className="genreButton">Açao</button>
                     </form>
                     <form onSubmit={sobrenaturalSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Sobrenatural</button>
+                        <button type="submit" value="submit" className="genreButton">Sobrenatural</button>
                     </form>
                     <form onSubmit={desenhoSubmit}>
-                        <button type="submit" value="submit" id="genreButton">Desenhos</button>
+                        <button type="submit" value="submit" className="genreButton">Desenhos</button>
                     </form>
                     </div>
                 </div>
                 <form onSubmit={inicioSubmit}>
-                    <button className="btn btn-success" type="submit" value="submit" id="genreButton">Pagina Inicial</button>
+                    <button type="submit" value="submit" id="inicioButton">Pagina Inicial</button>
                 </form>
             </nav>
         </header>

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { createRef, useEffect, useState } from "react";
-import { Movie } from "../../types/movie";
+import { Movie, MoviePage } from "../../types/movie";
 import { BASE_URL, FRONT_URL } from "../../utils/requests";
+import MiniMovieCard from "../MiniMovieCard";
 import './styles.css';
 
 type Props = {
@@ -34,7 +35,31 @@ function FormCard( { movieId } : Props){
         });
     }, [movieId]);
 
+    const [pageNumber, setPageNumber] = useState(0);
+
+    const[page, setPage] = useState<MoviePage>({
+        content: [],
+        last: true,
+        totalPages: 0,
+        totalElements: 0,
+        size: 12,
+        number: 0,
+        first: true,
+        numberOfElements: 0,
+        empty: true
+    });
+
+    console.log(setPageNumber+" "+page);
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/movies/findByGenre/${movie?.genre}?size=12&page=${pageNumber}&sort=id`).then(response => {
+            const data = response.data as MoviePage;
+            setPage(data);
+        });
+    }, [movie?.genre, pageNumber]);
+
     return (
+        <>
         <div>
             <h3 id="nameMovieInForm">{movie?.name}</h3>
             <div>
@@ -64,6 +89,18 @@ function FormCard( { movieId } : Props){
         </form>
         </div>
         </div>
+        <h5 id="mini-genres">FILMES DO MESMO GENERO</h5>
+        <div className="listing-container">
+            <div className="rows">
+                {page.content.map(movie =>(
+                <div key={movie.id}>
+                    <MiniMovieCard movie={movie} />
+                </div>
+                )
+                )}
+            </div>
+        </div>
+        </>
     )
 }
 

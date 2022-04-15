@@ -43,6 +43,7 @@ code {
 }
 #movieCardName{
   color: #000000;
+  margin: 0 auto;
 }
 .movie-card-3rd-container{
   display: flex;
@@ -51,10 +52,10 @@ code {
   align-items: center;
   height: 75px;
   width: 200px;
-  margin-left: 13px;
+  margin: 0 auto;
 
 }
-img{
+.image-movie-global{
   margin-left: 0px;
   width: 100%;
   height: 300px;
@@ -80,14 +81,24 @@ img{
   justify-content: center;
   align-items: center;
 }
-#genreButton{
+.genreButton{
   background-color: #ffffff00;
   border: rgba(255, 255, 255, 0);
   color: rgb(255, 255, 255);
   padding-top: 6px;
   padding-bottom: 6px;
 }
-#genreButton:hover{
+.genreButton:hover{
+  border: none;
+}
+#inicioButton{
+  background-color: #ffffff00;
+  border: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+#inicioButton:hover{
   border: none;
 }
 
@@ -142,21 +153,31 @@ img{
   #input{width: 320px;}
 }
 @media screen and (max-width: 768px) {
-  .movie-card-container{width: auto; height: auto; margin-bottom: 15px; margin-left: 25px; }
+  .movie-card-container{width: 215px; height: auto; margin-bottom: 15px; margin-left: 25px; }
   #input{width: 290px;}
 }
 @media screen and (max-width: 729px) {
-  .movie-card-container{width: auto; height: auto; margin-bottom: 15px; margin-left: 20px; }
+  .movie-card-container{width: 215px; height: auto; margin-bottom: 15px; margin-left: 20px; }
+}
+@media screen and (max-width: 722px) {
+  #input{width: 250px;}
+  .movie-card-container{width: 209px; height: auto; margin-bottom: 15px; margin-left: 13px; }
 }
 @media screen and (max-width: 712px) {
   #input{width: 250px;}
-  .movie-card-container{width: auto; height: auto; margin-bottom: 15px; margin-left: 13px; }
+  .movie-card-container{width: 209px; height: auto; margin-bottom: 15px; margin-left: 13px; }
 }
 @media screen and (max-width: 696px) {
   #input{width: 250px;}
+  .movie-card-container{width: 202px; height: auto; margin-bottom: 15px; margin-left: 13px; }
+}
+@media screen and (max-width: 684px) {
+  #input{width: 250px;}
+  .movie-card-container{width: 197px; height: auto; margin-bottom: 15px; margin-left: 13px; }
 }
 @media screen and (max-width: 646px) {
   #input{width: 215px;}
+  .movie-card-container{width: 190px; height: auto; margin-bottom: 15px; margin-left: 13px; }
 }
 @media screen and (max-width: 611px) {
   #input{width: 170px;}

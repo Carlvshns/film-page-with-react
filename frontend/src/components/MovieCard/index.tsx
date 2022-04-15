@@ -9,7 +9,9 @@ function MovieCard( { movie } : Props){
 
     return(
         <div className="movie-card-container">
-            <img className="image-movie-global" src={movie.image} alt={movie.name} />
+            <Link to={`/form/${movie.id}`} style={{ textDecoration: 'none'}}>
+                <img className="image-movie-global" src={movie.image} alt={movie.name} />
+            </Link>
             <div className="movie-card-2nd-container">
                 <div className="movie-card-3rd-container">
                 <h5 id="movieCardName">{movie.name}</h5>
