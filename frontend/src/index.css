@@ -61,6 +61,10 @@ code {
   height: 300px;
   border-radius: 8px 8px 0 0;
 }
+.image-movie-global:hover{
+  width: 105%;
+  height: 315px;
+}
 #assistirButton{
   display: flex;
   flex-direction: row;
@@ -146,11 +150,35 @@ code {
 .dropdown:hover .dropbtn {background-color: #ff0000;}
 
 /*Responsave*/
-@media screen and (max-width: 898px) {
-  #input{width: 300px;}
+@media screen and (max-width: 3840px) {
+  #input{width: 320px;}
+  .movie-card-container{width:540px;}
+}
+@media screen and (max-width: 2160px) {
+  #input{width: 320px;}
+  .movie-card-container{width:301px;}
+}
+@media screen and (max-width: 1920px) {
+  #input{width: 320px;}
+  .movie-card-container{width:207px;}
+}
+@media screen and (max-width: 1366px) {
+  #input{width: 320px;}
+  .movie-card-container{width:215px; margin-left: 4px;}
+}
+@media screen and (max-width: 1280px) {
+  #input{width: 320px;}
+  .movie-card-container{width:208px;}
+}
+@media screen and (max-width: 1080px) {
+  #input{width: 320px;}
+  .movie-card-container{width:210px;}
 }
 @media screen and (max-width: 913px) {
   #input{width: 320px;}
+}
+@media screen and (max-width: 898px) {
+  #input{width: 300px;}
 }
 @media screen and (max-width: 768px) {
   .movie-card-container{width: 215px; height: auto; margin-bottom: 15px; margin-left: 25px; }
@@ -161,7 +189,7 @@ code {
 }
 @media screen and (max-width: 722px) {
   #input{width: 250px;}
-  .movie-card-container{width: 209px; height: auto; margin-bottom: 15px; margin-left: 13px; }
+  .movie-card-container{width: 209px; height: auto; margin-bottom: 15px; margin-left: 23px; }
 }
 @media screen and (max-width: 712px) {
   #input{width: 250px;}
@@ -178,6 +206,10 @@ code {
 @media screen and (max-width: 646px) {
   #input{width: 215px;}
   .movie-card-container{width: 190px; height: auto; margin-bottom: 15px; margin-left: 13px; }
+}
+@media screen and (max-width: 640px) {
+  #input{width: 215px;}
+  .movie-card-container{width: 190px; height: auto; margin-bottom: 15px; margin-left: 17px; }
 }
 @media screen and (max-width: 611px) {
   #input{width: 170px;}
