@@ -33,15 +33,31 @@ code {
   background-color: #003cff;
   border: none;
 }
-.carousel-inner{
+.genreButton{
+  background-color: #ffffff00;
+  border: #ffffff00;
+  color: #ffffff;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.genreButton:hover{
+  border: none;
+}
+#inicioButton{
+  background-color: #ffffff00;
+  border: #ffffff00;
+  color: #ffffff;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+#inicioButton:hover{
+  border: none;
+}
+#paginationButton{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: -15%;
-}
-.d-block{
-  border-radius: 8px;
 }
 .movie-card-container{
   width: 215px;
@@ -88,32 +104,6 @@ code {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-#paginationButton{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.genreButton{
-  background-color: #ffffff00;
-  border: #ffffff00;
-  color: #ffffff;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-.genreButton:hover{
-  border: none;
-}
-#inicioButton{
-  background-color: #ffffff00;
-  border: #ffffff00;
-  color: #ffffff;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-#inicioButton:hover{
-  border: none;
 }
 
 /* Dropdown Button */

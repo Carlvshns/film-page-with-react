@@ -1,0 +1,22 @@
+.carousel-inner{
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: -14.1%;
+  margin-bottom: 8px;
+}
+.d-block{
+    border-radius: 8px;
+}
+.d-block:hover{
+  width: 400px;
+  height: 150px;
+}
+
+/*Responsave Slide*/
+
+@media screen and (max-width: 480px){
+  .d-block{width: 40%; height: 10%;}
+  .carousel-inner{margin-left: -20.2%;}
+}
