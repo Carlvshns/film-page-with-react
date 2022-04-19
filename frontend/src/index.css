@@ -151,19 +151,19 @@ code {
 
 /*Responsave*/
 @media screen and (max-width: 3840px) {
-  #input{width: 320px;}
+  #input{width: 400px;}
   .movie-card-container{width:540px;}
 }
 @media screen and (max-width: 2160px) {
-  #input{width: 320px;}
+  #input{width: 360px;}
   .movie-card-container{width:301px;}
 }
 @media screen and (max-width: 1920px) {
-  #input{width: 320px;}
+  #input{width: 350px;}
   .movie-card-container{width:207px;}
 }
 @media screen and (max-width: 1366px) {
-  #input{width: 320px;}
+  #input{width: 330px;}
   .movie-card-container{width:215px; margin-left: 4px;}
 }
 @media screen and (max-width: 1280px) {
