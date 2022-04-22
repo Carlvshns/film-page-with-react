@@ -6,6 +6,7 @@
     color: #ffffff;
     -webkit-text-stroke-color: #ffffff;
     -webkit-text-stroke-width: 1px;
+    margin-top: 4px;
   }
   #synopsis{
     display: flex;
@@ -123,4 +124,61 @@
   font-size: 12px;
   padding: 4px 16px;
   width: 107.5px;
+  margin-bottom: 7.5px;
+}
+
+/*Responsave*/
+
+@media screen and (min-width: 480px) {
+  #synopsis{margin-left: 32px;}
+  #iframeDiv{width: 360px; height: 420px;}
+  .mini-movie-card-container{width: 116px;}
+  .mini-name-movie{width: 116px;}
+}
+@media screen and (min-width: 640px) {
+  #iframeDiv{width: 640px; height: 480px;}
+  .mini-movie-card-container{width: 156px;}
+  .mini-name-movie{width: 156px;}
+}
+@media screen and (min-width: 720px) {
+  #iframeDiv{width: 640px; height: 480px;}
+  .mini-movie-card-container{width: 140px;}
+  .mini-name-movie{width: 140px;}
+}
+@media screen and (min-width: 1080px) {
+  #iframeDiv{width: 640px; height: 480px;}
+  .mini-movie-card-container{width: 176px;}
+  .mini-name-movie{width: 176px;}
+}
+@media screen and (min-width: 1280px) {
+  #iframeDiv{width: 640px; height: 480px;}
+  .mini-movie-card-container{width: 156px;}
+  .mini-name-movie{width: 156px;}
+}
+@media screen and (min-width: 1320px) {
+  #iframeDiv{width: 640px; height: 480px;}
+  .mini-movie-card-container{width: 107.5px;}
+  .mini-name-movie{width: 107.5px;}
+}
+@media screen and (min-width: 1440px) {
+  #iframeDiv{width: 640px; height: 480px;}
+  .mini-movie-card-container{width: 140px;}
+  .mini-name-movie{width: 140px;}
+}
+@media screen and (min-width: 1920px) {
+  #iframeDiv{width: 640px; height: 480px;}
+  .mini-movie-card-container{width: 156px;}
+  .mini-name-movie{width: 156px;}
+}
+@media screen and (min-width: 2160px) {
+  #iframeDiv{width: 690px; height: 520px;}
+  .mini-movie-card-container{width: 266px;}
+  .mini-name-movie{width: 266px;}
+  .mini-image-movie-global{height: 320px}
+}
+@media screen and (min-width: 3840px) {
+  #iframeDiv{width: 720px; height: 640px;}
+  .mini-movie-card-container{width: 316px;}
+  .mini-name-movie{width: 316px;}
+  .mini-image-movie-global{height: 380px}
 }

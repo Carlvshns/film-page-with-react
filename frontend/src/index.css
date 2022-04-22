@@ -162,6 +162,10 @@ code {
   #input{width: 350px;}
   .movie-card-container{width:207px;}
 }
+@media screen and (max-width: 1440px) {
+  #input{width: 335px;}
+  .movie-card-container{width:235px; margin-left: 4px;}
+}
 @media screen and (max-width: 1366px) {
   #input{width: 330px;}
   .movie-card-container{width:215px; margin-left: 4px;}
@@ -214,9 +218,4 @@ code {
 @media screen and (max-width: 611px) {
   #input{width: 170px;}
 }
-@media screen and (max-width: 500px) {
-  #input{width: 90px;}
-  #gitLogo{margin-right: 0px;}
-  #buttonSearch{margin-left: 0px;}
-  .movie-card-container{width: 90%; height: auto; margin-bottom: 15px; margin-left: 25px; }
-}
+

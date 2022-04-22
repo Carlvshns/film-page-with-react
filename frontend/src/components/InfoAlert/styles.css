@@ -83,6 +83,14 @@
   margin-left: 25%;
   }
 }
+@media screen and (min-height: 1440px){
+  .alert{
+  width: 49%;
+  height: 9%;
+  margin-top: 15%;
+  margin-left: 28%;
+  }
+}
 @media screen and (min-height: 1920px){
   .alert{
   width: 25%;
