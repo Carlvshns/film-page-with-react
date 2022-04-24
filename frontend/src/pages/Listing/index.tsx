@@ -37,6 +37,7 @@ function Listing(){
     return(
         <>
         <Pagination page={page} onChange={handlePageChange} />
+        <InfoAlert />
         <div className="listing-container">
             <div className="rows">
                 {page.content.map(movie =>(

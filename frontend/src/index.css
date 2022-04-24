@@ -218,4 +218,12 @@ code {
 @media screen and (max-width: 611px) {
   #input{width: 170px;}
 }
+@media screen and (max-width: 480px) {
+  #gitLogo{margin-left: 0px; margin-right: 0px;}
+  #input{width: 122px; margin-left: -11px; padding-left: 6px; padding-right: 6px;}
+  #buttonSearch{margin-left: 0px; padding-left: 6px; padding-right: 6px;}
+  .dropdown{margin-left: 0px; padding: 0px}
+  .dropbtn{padding-left: 1px; padding-right: 1px;}
+  #inicioButton{padding-left: 1px; padding-right: 1px;}
+}
 

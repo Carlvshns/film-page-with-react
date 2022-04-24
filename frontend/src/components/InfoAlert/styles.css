@@ -2,7 +2,7 @@
     padding: 20px;
     background-color: #003cff;
     color: #ffffff;
-    width: 22%;
+    width: auto;
     height:168px;
     margin: 0 auto;
     z-index: 1;
@@ -27,95 +27,95 @@
 .closebtn:hover {
     color: #ff2929;
   }
-@media screen and (min-height: 480px){
+@media screen and (min-width: 480px){
     .alert{
-    width: 50%;
-    height: 30%;
+    width: 240px;
+    height: 177px;
     margin-top: 15%;
-    margin-left: 25%;
+    margin-left: 120px;
     }
 }
-@media screen and (min-height: 640px){
+@media screen and (min-width: 640px){
   .alert{
-  width: 40%;
-  height: 34%;
+  width: 220px;
+  height: 195px;
   margin-top: 15%;
-  margin-left: 30%;
+  margin-left: 210px;
   }
 }
-@media (min-height: 641px){
+@media screen and (min-width: 720px){
   .alert{
-  width: 22%;
-  height: 168px;
+  width: 250px;
+  height: 176px;
   margin-top: 10%;
-  margin-left: 39%;
+  margin-left: 235px;
   }
 }
-@media screen and (min-height: 720px){
+@media screen and (min-width: 766px){
   .alert{
-  width: 22%;
-  height: 170px;
+  width: 255px;
+  height: 173px;
   margin-top: 10%;
-  margin-left: 39%;
+  margin-left: 255.5px;
   }
 }
-@media screen and (min-height: 766px){
+@media screen and (min-width: 1080px){
   .alert{
-  width: 22%;
-  height: 168px;
+  width: 300px;
+  height: 152px;
   margin-top: 10%;
-  margin-left: 39%;
+  margin-left: 390px;
   }
 }
-@media screen and (min-height: 1080px){
+@media screen and (min-width: 1280px){
   .alert{
-  width: 50%;
-  height: 14%;
-  margin-top: 15%;
-  margin-left: 25%;
+  width: 306px;
+  height: 151px;
+  margin-top: 10%;
+  margin-left: 487px;
   }
 }
-@media screen and (min-height: 1280px){
+@media screen and (min-width: 1330px){
   .alert{
-  width: 50%;
-  height: 10%;
-  margin-top: 15%;
-  margin-left: 25%;
+  width: 300px;
+  height: 152px;
+  margin-top: 8%;
+  margin-left: 515px;
   }
 }
-@media screen and (min-height: 1440px){
+@media screen and (min-width: 1440px){
   .alert{
-  width: 49%;
-  height: 9%;
-  margin-top: 15%;
-  margin-left: 28%;
+  width: 310px;
+  height: 152px;
+  margin-top: 10%;
+  margin-left: 565px;
   }
 }
-@media screen and (min-height: 1920px){
+@media screen and (min-width: 1920px){
   .alert{
-  width: 25%;
-  height: 10%;
+  width: 320px;
+  height: 147px;
   margin-top: 15%;
-  margin-left: 37%;
+  margin-left: 800px;
 
   }
 }
 
-@media screen and (min-height: 2160px){
+@media screen and (min-width: 2160px){
   .alert{
-  width: 19%;
-  height: 8%;
+  width: 325px;
+  height: 143px;
   margin-top: 10%;
-  margin-left: 40%;
+  margin-left: 917.5px;
 
   }
 }
-@media screen and (min-height: 3840px){
+@media screen and (min-width: 3840px){
   .alert{
-  width: 16%;
-  height: 4%;
-  margin-top: 10%;
-  margin-left: 42%;
+  width: 330px;
+  height: 140px;
+  margin-top: 8%;
+  margin-left: 1755px;
 
   }
 }
