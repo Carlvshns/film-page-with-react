@@ -54,3 +54,9 @@
 #pageNumbers{
     color: #ffffff;
 }
+
+.dsmovie-pagination-button:enabled:hover{
+    width: 45px;
+    height: 45px;
+    margin-top: -5px;
+}

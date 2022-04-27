@@ -66,13 +66,27 @@
   width: 100px;
   margin: 0 auto;
 }
+.mini-divAssistirButton{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: width 1s, height 1s;
+  background-color: #ff0000;
+}
 #mini-assistirButton{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 2.5px;
+  color: #000000;
+  transition: width 1s, height 1s;
+}
+#mini-assistirButton:hover{
   color: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 20px 0px 40px 0px #ffffff;
 }
 
 /*effects in mini-moviesc container*/
