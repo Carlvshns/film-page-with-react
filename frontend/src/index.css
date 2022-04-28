@@ -27,6 +27,8 @@ code {
 }
 #input{
   width: 500px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 #input:focus{
   outline: none;
@@ -36,6 +38,8 @@ code {
   margin-left: 5px;
   background-color: #003cff;
   border: none;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 #buttonSearch:focus{
   outline: none;
@@ -74,6 +78,19 @@ code {
   margin-left: 4px;
   border-radius: 8px 8px 8px 8px;
   margin-bottom: 5px;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+.movie-card-container:hover{
+  outline: 0.5px solid #000000;
 }
 #movieCardName{
   color: #000000;
@@ -118,13 +135,16 @@ code {
   margin: 5px;
   color: #000000;
   width: 50%;
-  transition: width 1s, height 1s;
+  transition: width 1s, height 1s, color 1s;
+  border-radius: 30px;
+  background-color: #003cff;
 }
 #assistirButton:hover{
   width: 95%;
   color: #ffffff;
   border: 1px solid #ffffff;
   box-shadow: 20px 0px 40px 0px #ffffff;
+  border-radius: 2.5px;
 }
 #nameMovieInForm{
   display: flex;
@@ -246,7 +266,7 @@ code {
   #input{width: 170px;}
 }
 @media screen and (max-width: 480px) {
-  #gitLogo{margin-left: 0px; margin-right: 0px;}
+  #gitLogo{margin-left: 3px; margin-right: 0px;}
   #input{width: 122px; margin-left: -11px; padding-left: 6px; padding-right: 6px;}
   #buttonSearch{margin-left: 0px; padding-left: 6px; padding-right: 6px;}
   .dropdown{margin-left: 0px; padding: 0px}
@@ -255,3 +275,22 @@ code {
   .movie-card-container{margin-left: 33px;}
 }
 
+/*Responsave font-size*/
+
+@media screen and (min-height: 1280px) {
+  #input{font-size: 18px;}
+  .dropbtn{font-size: 18px;}
+  #inicioButton{font-size: 18px;}
+}
+
+@media screen and (min-height: 1440px) {
+  #input{font-size: 19px;}
+  .dropbtn{font-size: 19px;}
+  #inicioButton{font-size: 19px;}
+}
+
+@media screen and (min-width: 3840px) and (min-height: 2160px) {
+  #input{font-size: 24px;}
+  .dropbtn{font-size: 24px;}
+  #inicioButton{font-size: 24px;}
+}

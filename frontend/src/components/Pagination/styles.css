@@ -60,3 +60,21 @@
     height: 45px;
     margin-top: -5px;
 }
+
+@media screen and (min-height: 1280px) {
+    #pageNumbers{font-size: 18px;}
+  }
+  
+@media screen and (min-height: 1440px) {
+    #pageNumbers{font-size: 19px;}
+}
+  
+@media screen and (min-width: 3840px) and (min-height: 2160px) {
+    .dsmovie-pagination-button{width: 45px; height: 45px;}
+    .dsmovie-pagination-button:enabled:hover{
+        width: 50.625px;
+        height: 50.625px;
+        margin-top: -5.625px;
+    }
+    #pageNumbers{font-size: 23px;}
+}
