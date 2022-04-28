@@ -6,7 +6,12 @@ function Navbar() {
    
         const searchBar = (event.target as any).input.value;
 
+        if(searchBar === ""){
+            return window.location.reload;
+        }
+        else{
         return window.location.replace(`/search/${searchBar}`);
+        }
     };
 
     const superHeroiSubmit = (event: React.FormEvent<HTMLFormElement>) => {
