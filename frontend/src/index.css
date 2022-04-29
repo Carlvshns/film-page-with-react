@@ -29,10 +29,12 @@ code {
   width: 500px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  transition: 1s;
 }
 #input:focus{
   outline: none;
   box-shadow: none;
+  background-color: #003cff;
 }
 #buttonSearch{
   margin-left: 5px;
@@ -40,10 +42,20 @@ code {
   border: none;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  transition: 1s;
+}
+#buttonSearch:hover{
+  background-color: #ffffff;
+}
+#buttonSearch:hover .bi-search{
+  fill: #000000;
 }
 #buttonSearch:focus{
   outline: none;
   box-shadow: none;
+}
+.bi-search{
+  transition: 1s;
 }
 .genreButton{
   background-color: #ffffff00;
@@ -84,11 +96,12 @@ code {
 }
 .movie-card-container{
   width: 215px;
+  height: 423px;
   background-color: #ffffff;
   float: left;
   margin-left: 4px;
   border-radius: 8px 8px 8px 8px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   animation-duration: 3s;
   animation-name: slidein;
 }
@@ -102,6 +115,13 @@ code {
 }
 .movie-card-container:hover{
   outline: 0.5px solid #000000;
+}
+.movie-card-container:hover .image-movie-global{
+  width: 95%;
+  max-height: 289.25px;
+  margin-top: 5.375px;
+  margin-bottom: 5.375px;
+  margin-left: 5.375px;
 }
 #movieCardName{
   color: #000000;
@@ -122,11 +142,6 @@ code {
   width: 100%;
   height: 300px;
   border-radius: 8px 8px 0 0;
-  transition: width 1s, height 1s;
-}
-.image-movie-global:hover{
-  width: 105%;
-  height: 315px;
 }
 .divAssistirButton{
   display: flex;
@@ -137,6 +152,10 @@ code {
 }
 .divAssistirButton:hover{
   background-color: #ff0000;
+}
+.divAssistirButton:hover #assistirButton{
+  width: 95%;
+  border-radius: 2.5px;
 }
 #assistirButton{
   display: flex;
@@ -220,30 +239,80 @@ code {
 @media screen and (max-width: 3840px) {
   #input{width: 400px;}
   .movie-card-container{width:540px;}
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 274.8px;
+    margin-top: 12.6px;
+    margin-bottom: 12.6px;
+    margin-left: 12.6px;
+  }
 }
 @media screen and (max-width: 2160px) {
   #input{width: 360px;}
   .movie-card-container{width:301px;}
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 285.95px;
+    margin-top: 7.525px;
+    margin-bottom: 7.525px;
+    margin-left: 7.525px;
+  }
 }
 @media screen and (max-width: 1920px) {
   #input{width: 350px;}
   .movie-card-container{width:209px;}
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.55px;
+    margin-top: 5.225px;
+    margin-bottom: 5.225px;
+    margin-left: 5.225px;
+  }
+  
 }
 @media screen and (max-width: 1440px) {
   #input{width: 335px;}
-  .movie-card-container{width:235px; margin-left: 4px;}
+  .movie-card-container{width:235px; margin-bottom: 4px; margin-left: 4px;}
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 288.25px;
+    margin-top: 5.875px;
+    margin-bottom: 5.875px;
+    margin-left: 5.875px;
+  }
 }
 @media screen and (max-width: 1366px) {
   #input{width: 330px;}
-  .movie-card-container{width:215px; margin-left: 4px;}
+  .movie-card-container{width:215px; margin-bottom: 4px; margin-left: 4px;}
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.25px;
+    margin-top: 5.375px;
+    margin-bottom: 5.375px;
+    margin-left: 5.375px;
+  }
 }
 @media screen and (max-width: 1280px) {
   #input{width: 320px;}
-  .movie-card-container{width:208px;}
+  .movie-card-container{width:208.5px;}
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.6px;
+    margin-top: 5.375px;
+    margin-bottom: 5.375px;
+    margin-left: 5.2px;
+  }
 }
 @media screen and (max-width: 1080px) {
   #input{width: 320px;}
   .movie-card-container{width:211px;}
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.6px;
+    margin-top: 5.2px;
+    margin-bottom: 5.2px;
+    margin-left: 5.2px;
+  }
 }
 @media screen and (max-width: 913px) {
   #input{width: 320px;}
@@ -252,38 +321,97 @@ code {
   #input{width: 300px;}
 }
 @media screen and (max-width: 768px) {
-  .movie-card-container{width: 215px; height: auto; margin-bottom: 15px; margin-left: 30px; }
   #input{width: 290px;}
+  .movie-card-container{width: 215px; margin-bottom: 30px; margin-left: 30px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.25px;
+    margin-top: 5.375px;
+    margin-bottom: 5.375px;
+    margin-left: 5.375px;
+  }
 }
 @media screen and (max-width: 729px) {
-  .movie-card-container{width: 215px; height: auto; margin-bottom: 15px; margin-left: 20px; }
+  .movie-card-container{width: 215px; margin-bottom: 20px; margin-left: 20px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.25px;
+    margin-top: 5.375px;
+    margin-bottom: 5.375px;
+    margin-left: 5.375px;
+  }
 }
 @media screen and (max-width: 722px) {
   #input{width: 250px;}
-  .movie-card-container{width: 209px; height: auto; margin-bottom: 15px; margin-left: 23px; }
+  .movie-card-container{width: 209px; margin-bottom: 23px; margin-left: 23px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.55px;
+    margin-top: 5.225px;
+    margin-bottom: 5.225px;
+    margin-left: 5.225px;
+  }
 }
 @media screen and (max-width: 712px) {
   #input{width: 250px;}
-  .movie-card-container{width: 209px; height: auto; margin-bottom: 15px; margin-left: 13px; }
+  .movie-card-container{width: 209px; margin-bottom: 21px; margin-left: 21px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.55px;
+    margin-top: 5.225px;
+    margin-bottom: 5.225px;
+    margin-left: 5.225px;
+  }
 }
 @media screen and (max-width: 696px) {
   #input{width: 250px;}
-  .movie-card-container{width: 202px; height: auto; margin-bottom: 15px; margin-left: 13px; }
+  .movie-card-container{width: 202px; margin-bottom: 22px; margin-left: 22px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 291.9px;
+    margin-top: 4.05px;
+    margin-bottom: 4.05px;
+    margin-left: 4.05px;
+  }
 }
 @media screen and (max-width: 684px) {
   #input{width: 250px;}
-  .movie-card-container{width: 197px; height: auto; margin-bottom: 15px; margin-left: 13px; }
+  .movie-card-container{width: 197px; margin-bottom: 23px; margin-left: 23px; }
 }
 @media screen and (max-width: 646px) {
   #input{width: 215px;}
-  .movie-card-container{width: 190px; height: auto; margin-bottom: 15px; margin-left: 13px; }
+  .movie-card-container{width: 190px; margin-bottom: 19px; margin-left: 19px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 290.5px;
+    margin-top: 4.75px;
+    margin-bottom: 4.75px;
+    margin-left: 4.75px;
+  }
 }
 @media screen and (max-width: 640px) {
   #input{width: 215px;}
-  .movie-card-container{width: 190px; height: auto; margin-bottom: 15px; margin-left: 17px; }
+  .movie-card-container{width: 195px; margin-bottom: 13.5px; margin-left: 13.5px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 290.25px;
+    margin-top: 4.875px;
+    margin-bottom: 4.875px;
+    margin-left: 4.875px;
+  }
 }
 @media screen and (max-width: 611px) {
   #input{width: 170px;}
+}
+@media screen and (max-width: 576px){
+  .movie-card-container{width: 261px; margin-bottom: 18px; margin-left: 18px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 286.95px;
+    margin-top: 6.525px;
+    margin-bottom: 6.525px;
+    margin-left: 6.525px;
+  }
 }
 @media screen and (max-width: 480px) {
   #gitLogo{margin-left: 3px; margin-right: 0px;}
@@ -292,7 +420,14 @@ code {
   .dropdown{margin-left: 0px; padding: 0px}
   .dropbtn{padding-left: 2px; padding-right: 2px;}
   #inicioButton{padding-left: 2px; padding-right: 2px; margin-left: 0px; margin-right: 1.5px;}
-  .movie-card-container{margin-left: 33px;}
+  .movie-card-container{width: 210px; margin-bottom: 20px; margin-left: 20px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.5px;
+    margin-top: 5.25px;
+    margin-bottom: 5.25px;
+    margin-left: 5.25px;
+  }
 }
 
 /*Responsave font-size*/

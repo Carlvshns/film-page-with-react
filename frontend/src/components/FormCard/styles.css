@@ -1,10 +1,17 @@
+.divForm{
+  background-color: #ffffff;
+  width: 640px;
+  margin: 0 auto;
+  border-radius: 8px;
+  margin-top: 4px;
+}
 #nameMovieInForm{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
-    -webkit-text-stroke-color: #ffffff;
+    color: #000000;
+    -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
     margin-top: 4px;
   }
@@ -13,15 +20,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: #000000;
     margin-left: 4px;
+    margin-top: 4px;
   }
 #iframeDiv{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid #003cff;
-    border-radius: 3px;
     margin: 0 auto;
 }
 #whatsappButton{
@@ -82,6 +88,7 @@
   margin: 2.5px;
   color: #000000;
   transition: width 1s, height 1s;
+  width: 95%;
 }
 #mini-assistirButton:hover{
   color: #ffffff;
@@ -145,54 +152,58 @@
 
 @media screen and (min-width: 480px) {
   #synopsis{margin-left: 32px;}
+  .divForm{width: 360px;}
   #iframeDiv{width: 360px; height: 420px;}
-  .mini-movie-card-container{width: 116px;}
-  .mini-name-movie{width: 116px;}
+  .mini-movie-card-container{width: 115px;}
+  .mini-name-movie{width: 115px;}
 }
 @media screen and (min-width: 640px) {
+  .divForm{width: 640px;}
   #iframeDiv{width: 640px; height: 480px;}
-  .mini-movie-card-container{width: 156px;}
-  .mini-name-movie{width: 156px;}
+  .mini-movie-card-container{width: 155px;}
+  .mini-name-movie{width: 155px;}
 }
 @media screen and (min-width: 720px) {
   #iframeDiv{width: 640px; height: 480px;}
-  .mini-movie-card-container{width: 140px;}
-  .mini-name-movie{width: 140px;}
+  .mini-movie-card-container{width: 139px;}
+  .mini-name-movie{width: 139px;}
 }
 @media screen and (min-width: 1080px) {
   #iframeDiv{width: 640px; height: 480px;}
-  .mini-movie-card-container{width: 176px;}
-  .mini-name-movie{width: 176px;}
+  .mini-movie-card-container{width: 175px;}
+  .mini-name-movie{width: 175px;}
 }
 @media screen and (min-width: 1280px) {
   #iframeDiv{width: 640px; height: 480px;}
-  .mini-movie-card-container{width: 156px;}
-  .mini-name-movie{width: 156px;}
+  .mini-movie-card-container{width: 155px;}
+  .mini-name-movie{width: 155px;}
 }
 @media screen and (min-width: 1320px) {
   #iframeDiv{width: 640px; height: 480px;}
-  .mini-movie-card-container{width: 107.5px;}
-  .mini-name-movie{width: 107.5px;}
+  .mini-movie-card-container{width: 128px;}
+  .mini-name-movie{width: 128px;}
 }
 @media screen and (min-width: 1440px) {
   #iframeDiv{width: 640px; height: 480px;}
-  .mini-movie-card-container{width: 140px;}
-  .mini-name-movie{width: 140px;}
+  .mini-movie-card-container{width: 139.5px;}
+  .mini-name-movie{width: 139.5px;}
 }
 @media screen and (min-width: 1920px) {
   #iframeDiv{width: 640px; height: 480px;}
-  .mini-movie-card-container{width: 156px;}
-  .mini-name-movie{width: 156px;}
+  .mini-movie-card-container{width: 155,6px;}
+  .mini-name-movie{width: 155.6px;}
 }
 @media screen and (min-width: 2160px) {
+  .divForm{width: 700px;}
   #iframeDiv{width: 690px; height: 520px;}
-  .mini-movie-card-container{width: 266px;}
-  .mini-name-movie{width: 266px;}
+  .mini-movie-card-container{width: 265.5px;}
+  .mini-name-movie{width: 265.5px;}
   .mini-image-movie-global{height: 320px}
 }
 @media screen and (min-width: 3840px) {
+  .divForm{width: 768px;}
   #iframeDiv{width: 720px; height: 640px;}
-  .mini-movie-card-container{width: 316px;}
-  .mini-name-movie{width: 316px;}
+  .mini-movie-card-container{width: 315.5px;}
+  .mini-name-movie{width: 315.5px;}
   .mini-image-movie-global{height: 380px}
 }
