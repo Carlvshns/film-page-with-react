@@ -38,8 +38,8 @@ code {
   margin-left: 5px;
   background-color: #003cff;
   border: none;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 #buttonSearch:focus{
   outline: none;
@@ -51,19 +51,30 @@ code {
   color: #ffffff;
   padding-top: 6px;
   padding-bottom: 6px;
+  transition: 1s;
 }
 .genreButton:hover{
   border: none;
+  background-color: #003cff;
+  border-radius: 30px;
 }
 #inicioButton{
-  background-color: #ffffff00;
+  background-color: #003cff;
   border: #ffffff00;
   color: #ffffff;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 4px;
+  transition: 1s;
 }
 #inicioButton:hover{
   border: none;
+  background-color: #ffffff;
+  color: #000000;
 }
 #paginationButton{
   display: flex;
@@ -155,11 +166,20 @@ code {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #ff2929;
-  color: #ffffff;
-  padding: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 8px;
   font-size: 16px;
   border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transition: 1s;
+}
+.dropbtn:hover{
+  background-color: #003cff;
+  color: #ffffff;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -173,7 +193,7 @@ code {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #003cff;
+  background-color: #003cff0e;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px #000000;
   z-index: 1;
@@ -194,7 +214,7 @@ code {
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #ff0000;}
+.dropdown:hover .dropbtn {background-color: #003cff;}
 
 /*Responsave*/
 @media screen and (max-width: 3840px) {
@@ -270,8 +290,8 @@ code {
   #input{width: 122px; margin-left: -11px; padding-left: 6px; padding-right: 6px;}
   #buttonSearch{margin-left: 0px; padding-left: 6px; padding-right: 6px;}
   .dropdown{margin-left: 0px; padding: 0px}
-  .dropbtn{padding-left: 1px; padding-right: 1px;}
-  #inicioButton{padding-left: 1px; padding-right: 1px;}
+  .dropbtn{padding-left: 2px; padding-right: 2px;}
+  #inicioButton{padding-left: 2px; padding-right: 2px; margin-left: 0px; margin-right: 1.5px;}
   .movie-card-container{margin-left: 33px;}
 }
 
