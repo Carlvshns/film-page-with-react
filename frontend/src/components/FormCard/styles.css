@@ -2,8 +2,13 @@
   background-color: #ffffff;
   width: 640px;
   margin: 0 auto;
-  border-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   margin-top: 4px;
+}
+.divForm:hover{
+  background-color: #003cff0e;
+  box-shadow: 0px 8px 16px 0px #000000;
 }
 #nameMovieInForm{
     display: flex;
@@ -14,6 +19,7 @@
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
     margin-top: 4px;
+    font-family: 'Bebas Neue';
   }
   #synopsis{
     display: flex;
@@ -23,6 +29,8 @@
     color: #000000;
     margin-left: 4px;
     margin-top: 4px;
+    font-family: 'Bebas Neue';
+    font-size: 16px;
   }
 #iframeDiv{
     display: flex;

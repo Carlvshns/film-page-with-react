@@ -61,13 +61,17 @@ function FormCard( { movieId } : Props){
     return (
         <>
         <div className="divForm">
+        <hr />
             <h3 id="nameMovieInForm">{movie?.name}</h3>
         <div>
+        <hr />
         <iframe id="iframeDiv" src={movie?.adress} width="640" height="480" ref={inputRef} allow="autoplay">
         </iframe>
+        <hr />
         <div>
                 <p id="synopsis"> Sinopse: &nbsp;{movie?.synopsis}</p>
         </div>
+        <hr />
         </div>
         <div id="share">
         <form onSubmit={shareWhatsappSubmit}>

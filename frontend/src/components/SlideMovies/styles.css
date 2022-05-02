@@ -13,38 +13,50 @@
 /*Responsave Slide*/
 
 @media screen and (min-width: 480px){
-  .d-block{width: 40%; height: 10%;}
-  .carousel-inner{margin-left: -20.2%;}
+  .d-block{width: 200px; height: 110px;}
+  .carousel-inner{margin-left: -99px;}
+}
+@media screen and (min-width: 576px) {
+  .d-block{width: 200px; height: 110px;}
+  .carousel-inner{margin-left: -101px;}
 }
 @media screen and (min-width: 640px){
-  .d-block{width: 35%; height: 10%;}
-  .carousel-inner{margin-left: -17.7%;}
+  .d-block{width: 225px; height: 125px;}
+  .carousel-inner{margin-left: -110px;}
 }
 @media screen and (min-width: 720px){
-  .d-block{width: 34%; height: 10%;}
-  .carousel-inner{margin-left: -16.9%;}
+  .d-block{width: 240px; height: 130px;}
+  .carousel-inner{margin-left: -118px;}
+}
+@media screen and (min-width: 768px) {
+  .d-block{width: 245px; height: 140px;}
+  .carousel-inner{margin-left: -120px;}
 }
 @media screen and (min-width: 1080px){
-  .d-block{width: 34%; height: 8%;}
-  .carousel-inner{margin-left: -18%;}
+  .d-block{width: 360px; height: 180px;}
+  .carousel-inner{margin-left: -181px;}
 }
 @media screen and (min-width: 1280px){
-  .d-block{width: 34%; height: 8%;}
-  .carousel-inner{margin-left: -17%;}
+  .d-block{width: 380px; height: 190px;}
+  .carousel-inner{margin-left: -190px;}
 }
 @media screen and (min-width: 1330px){
-  .d-block{width: 376px; height: 140px;}
-  .carousel-inner{margin-left: -14.1%;}
+  .d-block{width: 376px; height: 150px;}
+  .carousel-inner{margin-left: -185px;}
+}
+@media screen and (min-width: 1440px){
+  .d-block{width: 400px; height: 165px;}
+  .carousel-inner{margin-left: -190px;}
 }
 @media screen and (min-width: 1920px){
-  .d-block{width: 32%; height: 8%;}
-  .carousel-inner{margin-left: -15.5%;}
+  .d-block{width: 600px; height: 320px;}
+  .carousel-inner{margin-left: -297px;}
 }
 @media screen and (min-width: 2160px){
-  .d-block{width: 32%; height: 8%; border-radius: 10px;}
-  .carousel-inner{margin-left: -15.5%;}
+  .d-block{width: 700px; height: 375px; border-radius: 10px;}
+  .carousel-inner{margin-left: -335px;}
 }
 @media screen and (min-width: 3840px){
-  .d-block{width: 30%; height: 7%; border-radius: 10px;}
-  .carousel-inner{margin-left: -14.5%;}
+  .d-block{width: 1080px; height: 576px; border-radius: 10px;}
+  .carousel-inner{margin-left: -520px;}
 }

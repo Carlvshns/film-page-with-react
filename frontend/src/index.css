@@ -115,6 +115,8 @@ code {
 }
 .movie-card-container:hover{
   outline: 0.5px solid #000000;
+  background-color: #003cff0e;
+  box-shadow: 0px 8px 16px 0px #000000;
 }
 .movie-card-container:hover .image-movie-global{
   width: 95%;
@@ -126,6 +128,7 @@ code {
 #movieCardName{
   color: #000000;
   margin: 0 auto;
+  font-family: 'Bebas Neue';
 }
 .movie-card-3rd-container{
   display: flex;
@@ -151,7 +154,7 @@ code {
   transition: width 1s, height 1s;
 }
 .divAssistirButton:hover{
-  background-color: #ff0000;
+  background-color: #003cff0e;
 }
 .divAssistirButton:hover #assistirButton{
   width: 95%;
@@ -413,9 +416,9 @@ code {
     margin-left: 6.525px;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 490px) {
   #gitLogo{margin-left: 3px; margin-right: 0px;}
-  #input{width: 122px; margin-left: -11px; padding-left: 6px; padding-right: 6px;}
+  #input{width: 125px; margin-left: -11px; padding-left: 6px; padding-right: 6px;}
   #buttonSearch{margin-left: 0px; padding-left: 6px; padding-right: 6px;}
   .dropdown{margin-left: 0px; padding: 0px}
   .dropbtn{padding-left: 2px; padding-right: 2px;}
