@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Create from './pages/create';
 import Form from './pages/form';
 import Genre from './pages/genre';
 import Listing from './pages/Listing';
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
        <Routes>
          <Route path="/" element={<Listing />} />
+         <Route path="/create" element={<Create />} />
          <Route path="/form">
            <Route path=":movieId" element={<Form />} />
          </Route>

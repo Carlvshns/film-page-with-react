@@ -31,5 +31,9 @@ public class MovieService {
     public Page<Movie> findByGenre(String genre, Pageable pageable){
         return movieRepository.findByGenreIgnoreCaseContaining(genre, pageable);
     }
+
+    public Movie save(Movie movie){
+        return movieRepository.save(movie);
+    }
    
 }

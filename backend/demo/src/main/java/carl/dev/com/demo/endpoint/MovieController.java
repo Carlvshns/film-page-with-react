@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,6 +42,11 @@ public class MovieController {
     @GetMapping(path = "/findByGenre/{genre}")
     public ResponseEntity<Page<Movie>> findByGenre(@PathVariable String genre, Pageable pageable){
         return new ResponseEntity<>(movieService.findByGenre(genre, pageable), HttpStatus.OK);
+    }
+
+    @PutMapping(path = "/create")
+    public ResponseEntity<Movie> save(@RequestBody Movie movie){
+        return new ResponseEntity<>(movieService.save(movie), HttpStatus.CREATED);
     }
 
 }

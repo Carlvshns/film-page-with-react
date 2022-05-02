@@ -74,4 +74,19 @@ public class MovieRepositoryTest {
         Assertions.assertFalse(movies.isEmpty());
     }
 
+    @Test
+    @DisplayName("Save persists movie when Sucessful")
+    void save_PersistMovie_WhenSucessful(){
+        Movie movieToBeSaved = MovieCreator.movieCreator();
+
+        Movie movieSaved = this.movieRepository.save(movieToBeSaved);
+
+        Assertions.assertNotNull(movieSaved);
+
+        Assertions.assertNotNull(movieSaved.getId());
+
+        Assertions.assertEquals(movieSaved.getName(), movieToBeSaved.getName());
+    }
+
+
 }
