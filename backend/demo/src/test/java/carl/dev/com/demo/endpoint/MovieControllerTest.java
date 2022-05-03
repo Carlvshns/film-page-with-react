@@ -15,6 +15,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import carl.dev.com.demo.domain.Movie;
@@ -44,6 +45,11 @@ public class MovieControllerTest {
 
         BDDMockito.when(movieServiceMock.findByGenre(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
         .thenReturn(moviePage);
+
+        BDDMockito.when(movieServiceMock.save(ArgumentMatchers.any(Movie.class)))
+        .thenReturn(MovieCreator.movieCreator());
+
+        BDDMockito.doNothing().when(movieServiceMock).deleteById(ArgumentMatchers.anyLong());
     }
 
     @Test
@@ -104,6 +110,25 @@ public class MovieControllerTest {
         Assertions.assertEquals(1, movies.getSize());
 
         Assertions.assertEquals(expectedMovieGenre, movies.toList().get(0).getGenre());
+    }
+
+    @Test
+    @DisplayName("save returns movie when sucessful")
+    void save_ReturnsMovie_WhenSucessful() {
+        Movie expectedMovie = MovieCreator.movieCreator();
+        ResponseEntity<Movie> movie = movieController.save(expectedMovie);
+
+        Assertions.assertNotNull(movie);
+
+        Assertions.assertEquals(expectedMovie.getId(), MovieCreator.movieCreator().getId());
+
+        Assertions.assertEquals(expectedMovie.getName(), movie.getBody().getName());
+    }
+
+    @Test
+    @DisplayName("delete removes movie when sucessful")
+    void delete_RemovesMovie_WhenSucessful() {
+        Assertions.assertDoesNotThrow(() -> movieController.deleteById(1L));
     }
 
 }

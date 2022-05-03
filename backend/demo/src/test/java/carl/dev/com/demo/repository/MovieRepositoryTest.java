@@ -1,5 +1,7 @@
 package carl.dev.com.demo.repository;
 
+import java.util.Optional;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -88,5 +90,17 @@ public class MovieRepositoryTest {
         Assertions.assertEquals(movieSaved.getName(), movieToBeSaved.getName());
     }
 
+    @Test
+    @DisplayName("Delete removes anime when Sucessful")
+    void delete_RemovesAnime_WhenSucessful(){
+        Movie movieToBeSaved = MovieCreator.movieCreator();
+        
+        Movie movieSaved = this.movieRepository.save(movieToBeSaved);
+        
+        this.movieRepository.deleteById(movieSaved.getId());
 
+        Optional<Movie> movieDeleted = this.movieRepository.findById(movieSaved.getId());
+
+        Assertions.assertTrue(movieDeleted.isEmpty());
+    }
 }

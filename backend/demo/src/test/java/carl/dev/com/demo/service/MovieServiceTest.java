@@ -45,6 +45,11 @@ public class MovieServiceTest {
 
         BDDMockito.when(movieRepositoryMock.findByGenreIgnoreCaseContaining(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
         .thenReturn(moviePage);
+
+        BDDMockito.when(movieRepositoryMock.save(ArgumentMatchers.any(Movie.class)))
+        .thenReturn(MovieCreator.movieCreator());
+
+        BDDMockito.doNothing().when(movieRepositoryMock).deleteById(ArgumentMatchers.anyLong());
     }
 
     @Test
@@ -105,5 +110,24 @@ public class MovieServiceTest {
         Assertions.assertEquals(1, movies.getSize());
 
         Assertions.assertEquals(expectedMovieGenre, movies.toList().get(0).getGenre());
+    }
+
+    @Test
+    @DisplayName("save returns movie when sucessful")
+    void save_ReturnsMovie_WhenSucessful() {
+        Movie expectedMovie = MovieCreator.movieCreator();
+        Movie movie = movieService.save(expectedMovie);
+
+        Assertions.assertNotNull(movie);
+
+        Assertions.assertEquals(expectedMovie.getId(), MovieCreator.movieCreator().getId());
+
+        Assertions.assertEquals(expectedMovie.getName(), movie.getName());
+    }
+
+    @Test
+    @DisplayName("delete removes movie when sucessful")
+    void delete_RemovesMovie_WhenSucessful() {
+        Assertions.assertDoesNotThrow(() -> movieService.deleteById(1L));
     }
 }
