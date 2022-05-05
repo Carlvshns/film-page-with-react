@@ -31,7 +31,7 @@ public class MovieController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Movie> findById(@PathVariable long id){
+    public ResponseEntity<Movie> findById(@PathVariable Long id){
         return ResponseEntity.ok(movieService.findById(id));
     }
 
@@ -50,7 +50,7 @@ public class MovieController {
         return new ResponseEntity<>(movieService.save(movie), HttpStatus.CREATED);
     }
 
-    @DeleteMapping(path = "/delete")
+    @DeleteMapping(path = "/delete/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         movieService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

@@ -24,7 +24,7 @@ public class MovieService {
         return movieRepository.findByNameIgnoreCaseContaining(name, pageable);
     }
 
-    public Movie findById(long id){
+    public Movie findById(Long id){
         return movieRepository.findById(id).get();
     }
 

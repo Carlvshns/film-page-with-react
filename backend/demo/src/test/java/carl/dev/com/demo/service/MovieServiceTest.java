@@ -71,7 +71,7 @@ public class MovieServiceTest {
     @DisplayName("findById returns movie when sucessful")
     void findById_ReturnsAnime_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieService.findById(1);
+        Movie movies = movieService.findById(1L);
 
         Assertions.assertNotNull(movies);
 

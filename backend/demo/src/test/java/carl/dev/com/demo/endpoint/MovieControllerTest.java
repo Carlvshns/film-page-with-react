@@ -71,7 +71,7 @@ public class MovieControllerTest {
     @DisplayName("findById returns movie when sucessful")
     void findById_ReturnsAnime_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieController.findById(1).getBody();
+        Movie movies = movieController.findById(1L).getBody();
 
         Assertions.assertNotNull(movies);
 
