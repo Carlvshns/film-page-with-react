@@ -11,7 +11,10 @@
 }
 
 /*Responsave Slide*/
-
+@media screen and (max-width: 400px){
+  .d-block{width: 190px; height: 100px;}
+  .carousel-inner{margin-left: -96px;}
+}
 @media screen and (min-width: 480px){
   .d-block{width: 200px; height: 110px;}
   .carousel-inner{margin-left: -99px;}

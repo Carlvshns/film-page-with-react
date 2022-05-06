@@ -156,6 +156,25 @@
   margin-bottom: 7.5px;
 }
 
+/*Mobile view port response*/
+
+@media screen and (max-width: 400px){
+  #synopsis{margin-left: 32px;}
+  .divForm{width: 360px;}
+  #iframeDiv{width: 360px; height: 240px;}
+  .mini-movie-card-container{width: 125px;}
+  .mini-name-movie{width: 125px;}
+}
+@media screen and (max-width: 380px) {
+  #synopsis{margin-left: 32px;}
+  .divForm{width: 320px;}
+  #iframeDiv{width: 320px; height: 240px;}
+  .mini-movie-card-container{width: 100px;}
+  .mini-name-movie{width: 101px;}
+}
+
+/*View port ENDS */
+
 /*Responsave*/
 
 @media screen and (min-width: 480px) {
