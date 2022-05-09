@@ -4,7 +4,6 @@ import { createRef, useEffect, useState } from "react";
 import { Movie, MoviePage } from "../../types/movie";
 import { BASE_URL, FRONT_URL } from "../../utils/requests";
 import MiniMovieCard from "../MiniMovieCard";
-import {ReactVideoPlay, VideoSourceType} from 'react-video-play';
 import '../../../node_modules/react-video-play/public/css/react-video-play.css';
 import './styles.css';
 
@@ -34,9 +33,9 @@ function FormCard( { movieId } : Props){
 
     useEffect(() => {
         axios.get(`${BASE_URL}/movies/${movieId}`).then( response => {
-            setMovie(response.data)
+            setMovie(response.data);
         });
-    }, [movieId]);
+    }, [movieId, movie?.adress]);
 
     const [pageNumber, setPageNumber] = useState(0);
 
@@ -61,18 +60,6 @@ function FormCard( { movieId } : Props){
         });
     }, [movie?.genre, pageNumber]);
 
-    let src = [
-        {
-            name: '1080p',
-            source: [{
-                source: movie?.adress as string,
-                type: VideoSourceType.video_mp4
-            }]
-        }
-    ];
-
-    console.log(movie?.adress);
-
     return (
         <>
         <div className="divForm">
@@ -80,7 +67,24 @@ function FormCard( { movieId } : Props){
             <h3 id="nameMovieInForm">{movie?.name}</h3>
         <div>
         <hr />
-        <ReactVideoPlay ref={inputRef} sources={src}/>
+        <video
+            id="my-video"
+            className="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="360"
+            poster="MY_VIDEO_POSTER.jpg"
+            data-setup="{}"
+            src={movie?.adress}
+            ref={inputRef}>
+            <source ref={inputRef} src={movie?.adress+"#.mp4"} type="video/mp4" />
+            <p className="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" rel="noreferrer" target="_blank">supports HTML5 video</a>
+            </p>
+        </video>
         <hr />
         <div>
                 <p id="synopsis"> Sinopse: &nbsp;{movie?.synopsis}</p>

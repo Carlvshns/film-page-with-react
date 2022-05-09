@@ -75,6 +75,11 @@
     margin-left: 80px;
   }
 }
+@media screen and (min-width: 412px){
+  .alert{
+    margin-left: 86px;
+  }
+}
 /*Viewport ENDS*/
 
 /*Response*/
