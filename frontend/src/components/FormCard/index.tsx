@@ -1,8 +1,11 @@
 import axios from "axios";
+import React from "react";
 import { createRef, useEffect, useState } from "react";
 import { Movie, MoviePage } from "../../types/movie";
 import { BASE_URL, FRONT_URL } from "../../utils/requests";
 import MiniMovieCard from "../MiniMovieCard";
+import {ReactVideoPlay, VideoSourceType} from 'react-video-play';
+import '../../../node_modules/react-video-play/public/css/react-video-play.css';
 import './styles.css';
 
 type Props = {
@@ -58,6 +61,18 @@ function FormCard( { movieId } : Props){
         });
     }, [movie?.genre, pageNumber]);
 
+    let src = [
+        {
+            name: '1080p',
+            source: [{
+                source: movie?.adress as string,
+                type: VideoSourceType.video_mp4
+            }]
+        }
+    ];
+
+    console.log(movie?.adress);
+
     return (
         <>
         <div className="divForm">
@@ -65,8 +80,7 @@ function FormCard( { movieId } : Props){
             <h3 id="nameMovieInForm">{movie?.name}</h3>
         <div>
         <hr />
-        <iframe id="iframeDiv" src={movie?.adress} width="640" height="480" ref={inputRef} allow="autoplay">
-        </iframe>
+        <ReactVideoPlay ref={inputRef} sources={src}/>
         <hr />
         <div>
                 <p id="synopsis"> Sinopse: &nbsp;{movie?.synopsis}</p>
