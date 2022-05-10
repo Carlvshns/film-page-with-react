@@ -69,7 +69,7 @@ function FormCard( { movieId } : Props){
         <hr />
         <video
             id="my-video"
-            className="video-js"
+            className="video-js vjs-layout-tiny vjs-layout-x-small vjs-layout-small vjs-layout-medium vjs-layout-large"
             controls
             preload="auto"
             width="640"
