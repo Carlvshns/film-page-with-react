@@ -318,7 +318,7 @@ code {
   }
 }
 @media screen and (max-width: 961px){
-  .movie-card-container{margin-bottom: 5px; margin-left: 23.4px;}
+  .movie-card-container{margin-bottom: 23.4px; margin-left: 23.4px;}
 }
 @media screen and (max-width: 913px) {
   #input{width: 320px;}
@@ -326,6 +326,10 @@ code {
 }
 @media screen and (max-width: 898px) {
   #input{width: 300px;}
+}
+@media screen and (max-width: 851px) {
+  #input{width: 300px;}
+  .movie-card-container{width: 210px; margin-left: 2.2px; margin-bottom: 2.2px;}
 }
 @media screen and (max-width: 768px) {
   #input{width: 290px;}
@@ -439,8 +443,8 @@ code {
 /*Mobile view port*/
 @media screen and (max-width: 412px) {
   #gitLogo{width: 43px; height: 38px;}
-  .movie-card-container{width: 125px; height: 258px;margin-left: 9.25px; margin-bottom: 9.25px;}
-  .image-movie-global{height: 135px}
+  .movie-card-container{width: 125px; height: 135px;margin-left: 9.25px; margin-bottom: 9.25px;}
+  .image-movie-global{height: 135px; border-radius: 8px;}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
     max-height: 128.75px;
@@ -449,11 +453,13 @@ code {
     margin-left: 3.125px;
   }
   .movie-card-3rd-container{width: 125px;}
+  .divAssistirButton{display: none;}
+  #movieCardName{display: none;}
 }
 
 @media screen and (max-width: 400px) {
   #gitLogo{width: 43px; height: 38px;}
-  .movie-card-container{width: 125px; height: 258px;margin-left: 4px; margin-bottom: 4px;}
+  .movie-card-container{width: 125px; height: 135px;margin-left: 4px; margin-bottom: 4px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -466,7 +472,7 @@ code {
 }
 
 @media screen and (max-width: 380px){
-  .movie-card-container{width: 110px; height: 258px;margin-left: 12.5px; margin-bottom: 12.5px;}
+  .movie-card-container{width: 110px; height: 135px;margin-left: 12.5px; margin-bottom: 12.5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -481,7 +487,7 @@ code {
 
 @media screen and (max-width: 370px) {
   #gitLogo{width: 35px; height: 30px;}
-  .movie-card-container{width: 110px; height: 258px;margin-left: 10px; margin-bottom: 10px;}
+  .movie-card-container{width: 110px; height: 135px;margin-left: 10px; margin-bottom: 10px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -493,7 +499,7 @@ code {
 }
 @media screen and (max-width: 360px){
   #gitLogo{width: 32px; height: 27px;}
-  .movie-card-container{width: 110px; height: 258px;margin-left: 7.5px; margin-bottom: 7.5px;}
+  .movie-card-container{width: 110px; height: 135px;margin-left: 7.5px; margin-bottom: 7.5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -504,7 +510,7 @@ code {
   }
 }
 @media screen and (max-width: 350px){
-  .movie-card-container{width: 110px; height: 258px;margin-left: 5px; margin-bottom: 5px;}
+  .movie-card-container{width: 110px; height: 135px;margin-left: 5px; margin-bottom: 5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -515,7 +521,7 @@ code {
   }
 }
 @media screen and (max-width: 340px){
-  .movie-card-container{width: 110px; height: 258px;margin-left: 2.5px; margin-bottom: 2.5px;}
+  .movie-card-container{width: 110px; height: 135px;margin-left: 2.5px; margin-bottom: 2.5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -526,7 +532,7 @@ code {
   }
 }
 @media screen and (max-width: 330px){
-  .movie-card-container{width: 105px; height: 258px;margin-left: 3.5px; margin-bottom: 3.5px;}
+  .movie-card-container{width: 105px; height: 130px;margin-left: 3.5px; margin-bottom: 3.5px;}
   .image-movie-global{height: 130px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -537,7 +543,7 @@ code {
   }
 }
 @media screen and (max-width: 320px){
-  .movie-card-container{width: 105px; height: 258px;margin-left: 1.25px; margin-bottom: 1.25px;}
+  .movie-card-container{width: 105px; height: 130px;margin-left: 1.25px; margin-bottom: 1.25px;}
   .image-movie-global{height: 130px}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
