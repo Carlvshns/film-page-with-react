@@ -16,6 +16,7 @@ public class Movie {
     private String name;
     private String image;
     private String adress;
+    private String poster;
     private String synopsis;
     private String genre;
 
@@ -48,6 +49,13 @@ public class Movie {
     }
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public String getSynopsis() {

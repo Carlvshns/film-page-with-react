@@ -180,7 +180,7 @@ video{
 
 /*View port ENDS */
 
-/*Responsave*/
+/*Responsive*/
 
 @media screen and (min-width: 480px) {
   #synopsis{margin-left: 32px;}
@@ -238,4 +238,10 @@ video{
   .mini-movie-card-container{width: 315.5px;}
   .mini-name-movie{width: 315.5px;}
   .mini-image-movie-global{height: 380px}
+}
+
+/*responsive font-size*/
+@media screen and (max-width: 630px){
+  #whatsappButton{font-size: 11px;}
+  #facebookButton{font-size: 11px;}
 }

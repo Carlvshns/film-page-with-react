@@ -67,23 +67,8 @@ function FormCard( { movieId } : Props){
             <h3 id="nameMovieInForm">{movie?.name}</h3>
         <div>
         <hr />
-        <video
-            id="my-video"
-            className="video-js vjs-layout-tiny vjs-layout-x-small vjs-layout-small vjs-layout-medium vjs-layout-large"
-            controls
-            preload="auto"
-            width="640"
-            height="360"
-            poster="MY_VIDEO_POSTER.jpg"
-            data-setup="{}"
-            src={movie?.adress}
-            ref={inputRef}>
-            <source ref={inputRef} src={movie?.adress+"#.mp4"} type="video/mp4" />
-            <p className="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-            <a href="https://videojs.com/html5-video-support/" rel="noreferrer" target="_blank">supports HTML5 video</a>
-            </p>
+        <video ref={inputRef} src={movie?.adress} id="my-video" className="js-player">
+        
         </video>
         <hr />
         <div>
