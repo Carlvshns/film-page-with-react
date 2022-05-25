@@ -95,7 +95,7 @@ function FormCard( { movieId } : Props){
         </form>
         </div>
         </div>
-        <h5 id="mini-genres">FILMES DO MESMO GENERO</h5>
+        <h5 id="mini-genres">F I L ME S&nbsp;&nbsp;D O&nbsp;&nbsp;M E S M O &nbsp;&nbsp;G E N E R O</h5>
         <div className="listing-container">
             <div className="rows">
                 {page.content.map(movie =>(

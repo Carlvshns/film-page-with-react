@@ -5,6 +5,7 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-top: 4px;
+  transition: 1s;
 }
 .divForm:hover{
   background-color: #003cff0e;
@@ -66,11 +67,11 @@ video{
 #mini-genres{
   margin-top: 4px;
   margin-left: 4px;
-  color: #ffffff;
-}
-#mini-movieCardName{
   color: #000000;
-  margin: 0 auto;
+  font-family: 'Bebas Neue';
+}
+.mini-movie-card-2nd-container{
+  background-color: #003cff0e;
 }
 .mini-movie-card-3rd-container{
   display: flex;
@@ -87,7 +88,6 @@ video{
   justify-content: center;
   align-items: center;
   transition: width 1s, height 1s;
-  background-color: #ff0000;
 }
 #mini-assistirButton{
   display: flex;
@@ -109,18 +109,18 @@ video{
 
 .mini-movie-card-container{
   width: 107.5px;
-  background-color: rgb(255, 255, 255);
+  background-color: none;
   float: left;
   margin-left: 4px;
   border-radius: 8px 8px 8px 8px;
   margin-bottom: 5px;
   position: relative;
+  border: 0.5px solid #ffffff;
 }
-
 .mini-image-movie-global {
   opacity: 1;
   display: block;
-  transition: .5s ease;
+  transition: .8s ease;
   backface-visibility: hidden;
   margin-left: 0px;
   width: 100%;
@@ -155,6 +155,7 @@ video{
   padding: 4px 16px;
   width: 107.5px;
   margin-bottom: 7.5px;
+  font-family: 'Bebas Neue';
 }
 
 /*Mobile view port response*/
