@@ -4,7 +4,6 @@ import { createRef, useEffect, useState } from "react";
 import { Movie, MoviePage } from "../../types/movie";
 import { BASE_URL, FRONT_URL } from "../../utils/requests";
 import MiniMovieCard from "../MiniMovieCard";
-import '../../../node_modules/react-video-play/public/css/react-video-play.css';
 import './styles.css';
 
 type Props = {
@@ -67,8 +66,7 @@ function FormCard( { movieId } : Props){
             <h3 id="nameMovieInForm">{movie?.name}</h3>
         <div>
         <hr />
-        <video ref={inputRef} src={movie?.adress} id="my-video" className="js-player">
-        
+        <video ref={inputRef} src={movie?.adress} id="my-video" className="js-player">        
         </video>
         <hr />
         <div>

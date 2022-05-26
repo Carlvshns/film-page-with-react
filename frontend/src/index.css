@@ -7,23 +7,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ff0000;
 }
-
+html {
+  cursor: url('./assets/img/cursor1-removebg-preview.png'), default;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#theNavbar{
+#theNavbar {
   height: 64px;
   background-color: #ff2929;
 }
-#theFormInNavbar{
+#theFormInNavbar {
   display: contents;
 }
-#gitLogo{
+#gitLogo {
   width: 55px;
   height: 45px;
   margin-left: 15px;
   margin-right: 5px;
+}
+a {
+  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
 }
 #input{
   width: 500px;
@@ -31,12 +36,12 @@ code {
   border-bottom-left-radius: 30px;
   transition: 1s;
 }
-#input:focus{
+#input:focus {
   outline: none;
   box-shadow: none;
   background-color: #003cff;
 }
-#buttonSearch{
+#buttonSearch {
   margin-left: 5px;
   background-color: #003cff;
   border: none;
@@ -44,20 +49,21 @@ code {
   border-bottom-right-radius: 30px;
   transition: 1s;
 }
-#buttonSearch:hover{
+#buttonSearch:hover {
   background-color: #ffffff;
+  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
 }
-#buttonSearch:hover .bi-search{
+#buttonSearch:hover .bi-search {
   fill: #000000;
 }
-#buttonSearch:focus{
+#buttonSearch:focus {
   outline: none;
   box-shadow: none;
 }
-.bi-search{
+.bi-search {
   transition: 1s;
 }
-.genreButton{
+.genreButton {
   background-color: #ffffff00;
   border: #ffffff00;
   color: #ffffff;
@@ -65,12 +71,13 @@ code {
   padding-bottom: 6px;
   transition: 1s;
 }
-.genreButton:hover{
+.genreButton:hover {
   border: none;
   background-color: #003cff;
   border-radius: 30px;
+  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
 }
-#inicioButton{
+#inicioButton {
   background-color: #003cff;
   border: #ffffff00;
   color: #ffffff;
@@ -83,18 +90,19 @@ code {
   margin-left: 4px;
   transition: 1s;
 }
-#inicioButton:hover{
+#inicioButton:hover {
   border: none;
   background-color: #ffffff;
   color: #000000;
+  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
 }
-#paginationButton{
+#paginationButton {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.movie-card-container{
+.movie-card-container {
   width: 215px;
   height: 423px;
   background-color: #ffffff;
@@ -113,24 +121,24 @@ code {
     margin-left: 0%;
   }
 }
-.movie-card-container:hover{
+.movie-card-container:hover {
   outline: 0.5px solid #000000;
   background-color: #003cff0e;
   box-shadow: 0px 8px 16px 0px #000000;
 }
-.movie-card-container:hover .image-movie-global{
+.movie-card-container:hover .image-movie-global {
   width: 95%;
   max-height: 289.25px;
   margin-top: 5.375px;
   margin-bottom: 5.375px;
   margin-left: 5.375px;
 }
-#movieCardName{
+#movieCardName {
   color: #000000;
   margin: 0 auto;
   font-family: 'Bebas Neue';
 }
-.movie-card-3rd-container{
+.movie-card-3rd-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -140,27 +148,30 @@ code {
   margin: 0 auto;
 
 }
-.image-movie-global{
+.image-movie-global {
   margin-left: 0px;
   width: 100%;
   height: 300px;
   border-radius: 8px 8px 0 0;
 }
-.divAssistirButton{
+.image-movie-global:hover {
+  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+}
+.divAssistirButton {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   transition: width 1s, height 1s;
 }
-.divAssistirButton:hover{
+.divAssistirButton:hover {
   background-color: #003cff0e;
 }
-.divAssistirButton:hover #assistirButton{
+.divAssistirButton:hover #assistirButton {
   width: 95%;
   border-radius: 2.5px;
 }
-#assistirButton{
+#assistirButton {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -172,14 +183,15 @@ code {
   border-radius: 30px;
   background-color: #003cff;
 }
-#assistirButton:hover{
+#assistirButton:hover {
   width: 95%;
   color: #ffffff;
   border: 1px solid #ffffff;
   box-shadow: 20px 0px 40px 0px #ffffff;
   border-radius: 2.5px;
+  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
 }
-#nameMovieInForm{
+#nameMovieInForm {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -199,9 +211,10 @@ code {
   border-bottom-left-radius: 30px;
   transition: 1s;
 }
-.dropbtn:hover{
+.dropbtn:hover {
   background-color: #003cff;
   color: #ffffff;
+  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -317,7 +330,7 @@ code {
     margin-left: 5.2px;
   }
 }
-@media screen and (max-width: 961px){
+@media screen and (max-width: 961px) {
   .movie-card-container{margin-bottom: 23.4px; margin-left: 23.4px;}
 }
 @media screen and (max-width: 913px) {
@@ -414,7 +427,7 @@ code {
 @media screen and (max-width: 611px) {
   #input{width: 170px;}
 }
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
   .movie-card-container{width: 261px; margin-bottom: 18px; margin-left: 18px; }
   .movie-card-container:hover .image-movie-global{
     width: 95%;
@@ -471,7 +484,7 @@ code {
   .movie-card-3rd-container{width: 125px;}
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 380px) {
   .movie-card-container{width: 110px; height: 135px;margin-left: 12.5px; margin-bottom: 12.5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
@@ -497,7 +510,7 @@ code {
     margin-left: 2.75px;
   }
 }
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
   #gitLogo{width: 32px; height: 27px;}
   .movie-card-container{width: 110px; height: 135px;margin-left: 7.5px; margin-bottom: 7.5px;}
   .image-movie-global{height: 135px}
@@ -509,7 +522,7 @@ code {
     margin-left: 2.75px;
   }
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 350px) {
   .movie-card-container{width: 110px; height: 135px;margin-left: 5px; margin-bottom: 5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
@@ -520,7 +533,7 @@ code {
     margin-left: 2.75px;
   }
 }
-@media screen and (max-width: 340px){
+@media screen and (max-width: 340px) {
   .movie-card-container{width: 110px; height: 135px;margin-left: 2.5px; margin-bottom: 2.5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
@@ -531,7 +544,7 @@ code {
     margin-left: 2.75px;
   }
 }
-@media screen and (max-width: 330px){
+@media screen and (max-width: 330px) {
   .movie-card-container{width: 105px; height: 130px;margin-left: 3.5px; margin-bottom: 3.5px;}
   .image-movie-global{height: 130px}
   .movie-card-container:hover .image-movie-global{
@@ -542,7 +555,7 @@ code {
     margin-left: 2.625px;
   }
 }
-@media screen and (max-width: 320px){
+@media screen and (max-width: 320px) {
   .movie-card-container{width: 105px; height: 130px;margin-left: 1.25px; margin-bottom: 1.25px;}
   .image-movie-global{height: 130px}
   .movie-card-container:hover .image-movie-global{
@@ -557,13 +570,13 @@ code {
 
 /*Responsave font-size*/
 
-@media screen and (max-width: 412px){
+@media screen and (max-width: 412px) {
   #input{font-size: 13px;}
   .dropbtn{font-size: 13px;}
   #inicioButton{font-size: 13px;}
   #movieCardName{font-size: 14px;}
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 350px) {
   #input{font-size: 11px;}
   .dropbtn{font-size: 11px;}
   #inicioButton{font-size: 11px;}

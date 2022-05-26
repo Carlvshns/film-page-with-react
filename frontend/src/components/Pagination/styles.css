@@ -59,6 +59,7 @@
     width: 45px;
     height: 45px;
     margin-top: -5px;
+    cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
 }
 
 @media screen and (min-height: 1280px) {

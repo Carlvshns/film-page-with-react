@@ -39,6 +39,9 @@ video{
     align-items: center;
     margin: 0 auto;
 }
+video:hover{
+  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
+}
 #whatsappButton{
   margin-top: 3px;
   margin-bottom: 3px;
@@ -47,6 +50,7 @@ video{
 }
 #whatsappButton:hover{
   text-decoration: none;
+  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
 }
 #facebookButton{
   margin-top: 3px;
@@ -56,6 +60,7 @@ video{
 }
 #facebookButton:hover{
   text-decoration: none;
+  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
 }
 #share{
   display: flex;
@@ -103,6 +108,7 @@ video{
   color: #ffffff;
   border: 1px solid #ffffff;
   box-shadow: 20px 0px 40px 0px #ffffff;
+  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
 }
 
 /*effects in mini-moviesc container*/
@@ -126,6 +132,9 @@ video{
   width: 100%;
   height: 150px;
   border-radius: 8px 8px 0 0;
+}
+.mini-image-movie-global:hover {
+  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
 }
 
 .middle {
