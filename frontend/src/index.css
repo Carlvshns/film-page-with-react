@@ -30,11 +30,14 @@ code {
 a {
   cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
 }
-#input{
+#input {
   width: 500px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   transition: 1s;
+}
+#input:hover {
+  cursor: url('./assets/img/cursor3-removebg-preview.png'), text;
 }
 #input:focus {
   outline: none;
