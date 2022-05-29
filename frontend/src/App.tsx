@@ -14,7 +14,7 @@ function App() {
          <Route path="/" element={<Listing />} />
          <Route path="/create" element={<Create />} />
          <Route path="/form">
-           <Route path=":movieName" element={<Form />} />
+           <Route path=":movieUuid" element={<Form />} />
          </Route>
          <Route path="/search">
            <Route path=":movieName" element={<Search />} />

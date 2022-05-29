@@ -18,6 +18,7 @@ public class Movie {
     private String adress;
     private String synopsis;
     private String genre;
+    private String uuid;
 
     public Movie() {
     }
@@ -62,6 +63,13 @@ public class Movie {
     }
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     } 
     
 }

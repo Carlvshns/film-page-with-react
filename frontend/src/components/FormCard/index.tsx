@@ -7,23 +7,23 @@ import MiniMovieCard from "../MiniMovieCard";
 import './styles.css';
 
 type Props = {
-    movieName : string;
+    movieUuid : string;
 }
 
-function FormCard( { movieName } : Props){
+function FormCard( { movieUuid } : Props){
 
     const shareWhatsappSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
         
-        return window.open(`https://wa.me/?text=${FRONT_URL}/form/${movie?.id}`, '_blank');
+        return window.open(`https://wa.me/?text=${FRONT_URL}/form/${movie?.uuid}`, '_blank');
     };
 
     const shareFacebookSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
         
-        return window.open(`https://www.facebook.com/sharer/sharer.php?u=${FRONT_URL}/form/${movie?.id}`, '_blank');
+        return window.open(`https://www.facebook.com/sharer/sharer.php?u=${FRONT_URL}/form/${movie?.uuid}`, '_blank');
     };
 
     const [movie, setMovie] = useState<Movie>();
@@ -31,10 +31,10 @@ function FormCard( { movieName } : Props){
     const inputRef = createRef;
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/findByName/${movieName}`).then( response => {
+        axios.get(`${BASE_URL}/movies/findByUuid/${movieUuid}`).then( response => {
             setMovie(response.data);
         });
-    }, [movieName, movie?.adress]);
+    }, [movieUuid, movie?.adress]);
 
     const [pageNumber, setPageNumber] = useState(0);
 

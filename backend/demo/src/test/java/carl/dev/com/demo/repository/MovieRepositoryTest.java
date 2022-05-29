@@ -115,4 +115,16 @@ public class MovieRepositoryTest {
 
         Assertions.assertEquals("image", movies.getImage());
     }
+
+    @Test
+    @DisplayName("FindByUuid return Movie when Sucessful")
+    void findByUuid_ReturnsMovie_WhenSucessful(){
+        Movie movieToBeSaved = MovieCreator.movieCreator();
+        
+        this.movieRepository.save(movieToBeSaved);
+
+        Movie movies = this.movieRepository.findByUuid(movieToBeSaved.getUuid());
+
+        Assertions.assertEquals("image", movies.getImage());
+    }
 }

@@ -15,17 +15,21 @@ function CreateMovie () {
         const adress = (event.target as any).createAdress.value;
         const synopsis = (event.target as any).createSynopsis.value;
         const genre = (event.target as any).createGenre.value;
+        const uuid = (event.target as any).createUuid.value;
+        
+        const pass = (event.target as any).createPass.value; 
 
         const config: AxiosRequestConfig = {
             baseURL: BASE_URL,
             method: 'PUT',
-            url: 'movies/create',
+            url: `movies/create/${pass}`,
             data: {
                 name: name,
                 image: image,
                 adress: adress,
                 synopsis: synopsis,
-                genre: genre
+                genre: genre,
+                uuid: uuid
             }
         }
 
@@ -57,33 +61,57 @@ function CreateMovie () {
         });
     }, [pageNumber]);
 
-    const deleteSubmit = (movieId: number) => {
+    const deleteSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
-        axios.delete(`${BASE_URL}/movies/delete/${movieId}`)
+        event.preventDefault();
+
+        const movieId = (event.target as any).excludeId.value;
+        const pass = (event.target as any).excludePass.value;
+
+        axios.delete(`${BASE_URL}/movies/delete/${movieId}/${pass}`)
         .then(() => window.location.replace("/create"));
     }
 
     return(
         <>
+            <div className="divCreate">
+                <form onSubmit={createSubmit}>
+
+                    <label htmlFor="createName"></label>
+                    <input name="createName" id="createName" className="createInput" placeholder="Titulo do filme" required></input>
+
+                    <label htmlFor="createImage"></label>
+                    <input name="createImage" id="createImage" className="createInput" placeholder="URL da imagem" required></input>
+
+                    <label htmlFor="createadress"></label>
+                    <input name="createAdress" id="createAdress" className="createInput" placeholder="URL do video" required></input>
+
+                    <label htmlFor="createSynopsis"></label>
+                    <input name="createSynopsis" id="createSynopsis" className="createInput" placeholder="Sinopse" required></input>
+
+                    <label htmlFor="createGenre"></label>
+                    <input name="createGenre" id="createGenre" className="createInput" placeholder="Genero" required></input>
+
+                    <label htmlFor="createUuid"></label>
+                    <input name="createUuid" id="createUuid" className="createInput" placeholder="Uuid" required></input>
+
+                    <label htmlFor="createPass"></label>
+                    <input type="password" name="createPass" id="createPass" className="createInput" placeholder="Senha" required></input>
+
+                <button className="buttonSave" type="submit" value="submit">Adicionar</button>
+            </form>
+        </div>
+
         <div className="divCreate">
-        <form onSubmit={createSubmit}>
-            <label htmlFor="createName"></label>
-            <input name="createName" id="createName" className="createInput" placeholder="Titulo do filme" required></input>
+            <form onSubmit={deleteSubmit}>
+                <label htmlFor="excludeId"></label>
+                <input name="excludeId" id="excludeId" className="createInput" placeholder="Identificador" required></input>
 
-            <label htmlFor="createImage"></label>
-            <input name="createImage" id="createImage" className="createInput" placeholder="URL da imagem" required></input>
+                <label htmlFor="excludePass"></label>
+                <input type="password" name="excludePass" id="excludePass" className="createInput" placeholder="Senha" required></input>
 
-            <label htmlFor="createadress"></label>
-            <input name="createAdress" id="createAdress" className="createInput" placeholder="URL do video" required></input>
-
-            <label htmlFor="createSynopsis"></label>
-            <input name="createSynopsis" id="createSynopsis" className="createInput" placeholder="Sinopse" required></input>
-
-            <label htmlFor="createGenre"></label>
-            <input name="createGenre" id="createGenre" className="createInput" placeholder="Genero" required></input>
-
-            <button className="buttonSave" type="submit" value="submit">Adicionar</button>
-        </form>
+                <button className="buttonSave" type="submit" value="submit">Excluir</button>
+            </form>
         </div>
 
         <div>
@@ -92,7 +120,6 @@ function CreateMovie () {
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col" className="coluna">Nome do Filme</th>
-                    <th scope="col">Excluir</th>
                   </tr>
                 </thead>
             </table>
@@ -102,7 +129,6 @@ function CreateMovie () {
                   <tr>
                     <th scope="row">{movie.id}</th>
                     <td className="coluna">{movie.name}</td>
-                    <td><button className="buttonDelete" onClick={() => deleteSubmit(movie.id)}>X</button></td>
                   </tr>
                 </tbody>
               </table>

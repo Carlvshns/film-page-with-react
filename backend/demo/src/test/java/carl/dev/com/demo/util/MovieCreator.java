@@ -12,6 +12,7 @@ public class MovieCreator {
         movie.setImage("image");
         movie.setGenre("SUPER-HEROI");
         movie.setSynopsis("Picado por aranha e bla");
+        movie.setUuid("fa652685-1363-41c0-9a26-2a53e1951abf");
         return movie;
     }
 }

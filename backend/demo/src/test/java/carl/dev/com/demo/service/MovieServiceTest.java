@@ -53,6 +53,9 @@ public class MovieServiceTest {
 
         BDDMockito.when(movieRepositoryMock.findByName(ArgumentMatchers.anyString()))
         .thenReturn(MovieCreator.movieCreator());
+
+        BDDMockito.when(movieRepositoryMock.findByUuid(ArgumentMatchers.anyString()))
+        .thenReturn(MovieCreator.movieCreator());
     }
 
     @Test
@@ -119,7 +122,7 @@ public class MovieServiceTest {
     @DisplayName("save returns movie when sucessful")
     void save_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movie = movieService.save(expectedMovie);
+        Movie movie = movieService.save(expectedMovie, "rockblin0123");
 
         Assertions.assertNotNull(movie);
 
@@ -131,7 +134,21 @@ public class MovieServiceTest {
     @Test
     @DisplayName("delete removes movie when sucessful")
     void delete_RemovesMovie_WhenSucessful() {
-        Assertions.assertDoesNotThrow(() -> movieService.deleteById(1L));
+        Assertions.assertDoesNotThrow(() -> movieService.deleteById(1L, "rockblin0123"));
+    }
+
+    @Test
+    @DisplayName("save throws IllegalArgumentException when fail and pass not matcher")
+    void save_throwsIllegalArgumentException_WhenPassNotMatcher() {
+        Movie expectedMovie = MovieCreator.movieCreator();
+
+        Assertions.assertThrows(IllegalArgumentException.class,() -> movieService.save(expectedMovie, ""));
+    }
+
+    @Test
+    @DisplayName("delete throws IllegalArgumentException when fail and pass not matcher")
+    void delete_throwsIllegalArgumentException_WhenPassNotMatcher() {
+        Assertions.assertThrows(IllegalArgumentException.class,() -> movieService.deleteById(1L, ""));
     }
 
     @Test
@@ -139,6 +156,19 @@ public class MovieServiceTest {
     void findByName_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
         Movie movies = movieService.findByName(expectedMovie.getName());
+
+        Assertions.assertNotNull(movies);
+
+        Assertions.assertEquals(expectedMovie.getId(), movies.getId());
+
+        Assertions.assertEquals(expectedMovie.getName(), movies.getName());
+    }
+
+    @Test
+    @DisplayName("findByUuid returns movie when sucessful")
+    void findByUuid_ReturnsMovie_WhenSucessful() {
+        Movie expectedMovie = MovieCreator.movieCreator();
+        Movie movies = movieService.findByUuid(expectedMovie.getUuid());
 
         Assertions.assertNotNull(movies);
 

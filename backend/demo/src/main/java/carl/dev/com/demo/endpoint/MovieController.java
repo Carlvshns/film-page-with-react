@@ -45,14 +45,14 @@ public class MovieController {
         return new ResponseEntity<>(movieService.findByGenre(genre, pageable), HttpStatus.OK);
     }
 
-    @PutMapping(path = "/create")
-    public ResponseEntity<Movie> save(@RequestBody Movie movie){
-        return new ResponseEntity<>(movieService.save(movie), HttpStatus.CREATED);
+    @PutMapping(path = "/create/{pass}")
+    public ResponseEntity<Movie> save(@RequestBody Movie movie, @PathVariable String pass){
+        return new ResponseEntity<>(movieService.save(movie, pass), HttpStatus.CREATED);
     }
 
-    @DeleteMapping(path = "/delete/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id){
-        movieService.deleteById(id);
+    @DeleteMapping(path = "/delete/{id}/{pass}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id, @PathVariable String pass){
+        movieService.deleteById(id, pass);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
@@ -61,4 +61,8 @@ public class MovieController {
         return ResponseEntity.ok(movieService.findByName(name));
     }
 
+    @GetMapping(path = "/findByUuid/{uuid}")
+    public ResponseEntity<Movie> findByUuid(@PathVariable String uuid){
+        return ResponseEntity.ok(movieService.findByUuid(uuid));
+    }
 }

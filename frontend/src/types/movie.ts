@@ -5,6 +5,7 @@ export type Movie = {
     adress: string;
     synopsis: string;
     genre: string;
+    uuid: string;
 }
 
 export type MoviePage = {

@@ -16,6 +16,8 @@ public class MovieService {
         this.movieRepository = movieRepository;
     }
 
+    private String pass = "rockblin0123";
+
     public Page<Movie> findAll(Pageable pageable){
         return movieRepository.findAll(pageable);
     }
@@ -32,15 +34,27 @@ public class MovieService {
         return movieRepository.findByGenreIgnoreCaseContaining(genre, pageable);
     }
 
-    public Movie save(Movie movie){
+    public Movie save(Movie movie, String pass){
+        if(pass.equals(this.pass)){
         return movieRepository.save(movie);
+        }else{
+            throw new IllegalArgumentException("Senha incorreta/Invalid password");
+        }
     }
 
-    public void deleteById(Long id){
+    public void deleteById(Long id, String pass){
+        if(pass.equals(this.pass)){
         movieRepository.deleteById(id);
+        }else{
+            throw new IllegalArgumentException("Senha incorreta/Invalid password");
+        }
     }
    
     public Movie findByName(String name){
         return movieRepository.findByName(name);
+    }
+
+    public Movie findByUuid(String uuid){
+        return movieRepository.findByUuid(uuid);
     }
 }

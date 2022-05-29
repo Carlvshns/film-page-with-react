@@ -50,13 +50,6 @@
     width: 420px;
     font-family: 'Bebas Neue';
 }
-.buttonDelete {
-    background-color: #003cff;
-    color: #ffffff;
-    border: none;
-    border-radius: 30px;
-}
-.buttonDelete:hover {
-    background-color: #ff0000;
-    cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
+#excludeId{
+    margin-top: 4px;
 }
