@@ -50,6 +50,9 @@ public class MovieServiceTest {
         .thenReturn(MovieCreator.movieCreator());
 
         BDDMockito.doNothing().when(movieRepositoryMock).deleteById(ArgumentMatchers.anyLong());
+
+        BDDMockito.when(movieRepositoryMock.findByName(ArgumentMatchers.anyString()))
+        .thenReturn(MovieCreator.movieCreator());
     }
 
     @Test
@@ -69,7 +72,7 @@ public class MovieServiceTest {
 
     @Test
     @DisplayName("findById returns movie when sucessful")
-    void findById_ReturnsAnime_WhenSucessful() {
+    void findById_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
         Movie movies = movieService.findById(1L);
 
@@ -81,11 +84,11 @@ public class MovieServiceTest {
     }
 
     @Test
-    @DisplayName("findByName returns a list of movie inside page object when sucessful")
-    void findByName_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
+    @DisplayName("findByNameIgnoringCase returns a list of movie inside page object when sucessful")
+    void findByNameIgnoringCase_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieName = MovieCreator.movieCreator().getName();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieService.findByName(expectedMovieName, pageable);
+        Page<Movie> movies = movieService.findByNameIgnoreCaseContaining(expectedMovieName, pageable);
 
         Assertions.assertNotNull(movies);
 
@@ -129,5 +132,18 @@ public class MovieServiceTest {
     @DisplayName("delete removes movie when sucessful")
     void delete_RemovesMovie_WhenSucessful() {
         Assertions.assertDoesNotThrow(() -> movieService.deleteById(1L));
+    }
+
+    @Test
+    @DisplayName("findByName returns movie when sucessful")
+    void findByName_ReturnsMovie_WhenSucessful() {
+        Movie expectedMovie = MovieCreator.movieCreator();
+        Movie movies = movieService.findByName(expectedMovie.getName());
+
+        Assertions.assertNotNull(movies);
+
+        Assertions.assertEquals(expectedMovie.getId(), movies.getId());
+
+        Assertions.assertEquals(expectedMovie.getName(), movies.getName());
     }
 }

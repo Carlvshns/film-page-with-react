@@ -74,7 +74,7 @@ function Navbar() {
 
         event.preventDefault();
         
-        return window.location.replace(`/genre/sobrenatural`);
+        return window.location.replace(`/genre/terror`);
     };
 
     const desenhoSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -134,7 +134,7 @@ function Navbar() {
                         <button type="submit" value="submit" className="genreButton">Açao</button>
                     </form>
                     <form onSubmit={sobrenaturalSubmit}>
-                        <button type="submit" value="submit" className="genreButton">Sobrenatural</button>
+                        <button type="submit" value="submit" className="genreButton">Terror</button>
                     </form>
                     <form onSubmit={desenhoSubmit}>
                         <button type="submit" value="submit" className="genreButton">Desenhos</button>

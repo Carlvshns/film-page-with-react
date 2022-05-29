@@ -7,10 +7,10 @@ import MiniMovieCard from "../MiniMovieCard";
 import './styles.css';
 
 type Props = {
-    movieId : string;
+    movieName : string;
 }
 
-function FormCard( { movieId } : Props){
+function FormCard( { movieName } : Props){
 
     const shareWhatsappSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
@@ -31,10 +31,10 @@ function FormCard( { movieId } : Props){
     const inputRef = createRef;
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/${movieId}`).then( response => {
+        axios.get(`${BASE_URL}/movies/findByName/${movieName}`).then( response => {
             setMovie(response.data);
         });
-    }, [movieId, movie?.adress]);
+    }, [movieName, movie?.adress]);
 
     const [pageNumber, setPageNumber] = useState(0);
 

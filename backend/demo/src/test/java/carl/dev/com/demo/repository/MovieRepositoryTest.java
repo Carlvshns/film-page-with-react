@@ -47,8 +47,8 @@ public class MovieRepositoryTest {
     }
 
     @Test
-    @DisplayName("FindByName returns list page of Movies when Sucessful")
-    void findByName_ReturnsPageOfMovies_WhenSucessful(){
+    @DisplayName("FindByNameIgnoringCase returns list page of Movies when Sucessful")
+    void findByNameIgnoringCase_ReturnsPageOfMovies_WhenSucessful(){
         Movie movieToBeSaved = MovieCreator.movieCreator();
         
         this.movieRepository.save(movieToBeSaved);
@@ -102,5 +102,17 @@ public class MovieRepositoryTest {
         Optional<Movie> movieDeleted = this.movieRepository.findById(movieSaved.getId());
 
         Assertions.assertTrue(movieDeleted.isEmpty());
+    }
+
+    @Test
+    @DisplayName("FindByName return Movie when Sucessful")
+    void findByName_ReturnsMovie_WhenSucessful(){
+        Movie movieToBeSaved = MovieCreator.movieCreator();
+        
+        this.movieRepository.save(movieToBeSaved);
+
+        Movie movies = this.movieRepository.findByName(movieToBeSaved.getName());
+
+        Assertions.assertEquals("image", movies.getImage());
     }
 }

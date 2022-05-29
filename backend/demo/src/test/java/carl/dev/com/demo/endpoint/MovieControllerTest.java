@@ -40,7 +40,7 @@ public class MovieControllerTest {
         BDDMockito.when(movieServiceMock.findById(ArgumentMatchers.anyLong()))
         .thenReturn(MovieCreator.movieCreator());
 
-        BDDMockito.when(movieServiceMock.findByName(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
+        BDDMockito.when(movieServiceMock.findByNameIgnoreCaseContaining(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
         .thenReturn(moviePage);
 
         BDDMockito.when(movieServiceMock.findByGenre(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
@@ -50,6 +50,9 @@ public class MovieControllerTest {
         .thenReturn(MovieCreator.movieCreator());
 
         BDDMockito.doNothing().when(movieServiceMock).deleteById(ArgumentMatchers.anyLong());
+
+        BDDMockito.when(movieServiceMock.findByName(ArgumentMatchers.anyString()))
+        .thenReturn(MovieCreator.movieCreator());
     }
 
     @Test
@@ -69,7 +72,7 @@ public class MovieControllerTest {
 
     @Test
     @DisplayName("findById returns movie when sucessful")
-    void findById_ReturnsAnime_WhenSucessful() {
+    void findById_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
         Movie movies = movieController.findById(1L).getBody();
 
@@ -81,11 +84,11 @@ public class MovieControllerTest {
     }
 
     @Test
-    @DisplayName("findByName returns a list of movie inside page object when sucessful")
-    void findByName_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
+    @DisplayName("findByNameIgnoringCase returns a list of movie inside page object when sucessful")
+    void findByNameIgnoringCase_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieName = MovieCreator.movieCreator().getName();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieController.findByName(expectedMovieName, pageable).getBody();
+        Page<Movie> movies = movieController.findByNameIgnoreCaseContaining(expectedMovieName, pageable).getBody();
 
         Assertions.assertNotNull(movies);
 
@@ -129,6 +132,19 @@ public class MovieControllerTest {
     @DisplayName("delete removes movie when sucessful")
     void delete_RemovesMovie_WhenSucessful() {
         Assertions.assertDoesNotThrow(() -> movieController.deleteById(1L));
+    }
+
+    @Test
+    @DisplayName("findByName returns movie when sucessful")
+    void findByNAme_ReturnsMovie_WhenSucessful() {
+        Movie expectedMovie = MovieCreator.movieCreator();
+        Movie movies = movieController.findByName(expectedMovie.getName()).getBody();
+
+        Assertions.assertNotNull(movies);
+
+        Assertions.assertEquals(expectedMovie.getId(), movies.getId());
+
+        Assertions.assertEquals(expectedMovie.getName(), movies.getName());
     }
 
 }

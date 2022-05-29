@@ -20,7 +20,7 @@ public class MovieService {
         return movieRepository.findAll(pageable);
     }
 
-    public Page<Movie> findByName(String name, Pageable pageable){
+    public Page<Movie> findByNameIgnoreCaseContaining(String name, Pageable pageable){
         return movieRepository.findByNameIgnoreCaseContaining(name, pageable);
     }
 
@@ -40,4 +40,7 @@ public class MovieService {
         movieRepository.deleteById(id);
     }
    
+    public Movie findByName(String name){
+        return movieRepository.findByName(name);
+    }
 }

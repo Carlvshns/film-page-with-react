@@ -36,8 +36,8 @@ public class MovieController {
     }
 
     @GetMapping(path = "/search/{name}")
-    public ResponseEntity<Page<Movie>> findByName(@PathVariable String name, Pageable pageable){
-        return new ResponseEntity<>(movieService.findByName(name, pageable), HttpStatus.OK);
+    public ResponseEntity<Page<Movie>> findByNameIgnoreCaseContaining(@PathVariable String name, Pageable pageable){
+        return new ResponseEntity<>(movieService.findByNameIgnoreCaseContaining(name, pageable), HttpStatus.OK);
     }
 
     @GetMapping(path = "/findByGenre/{genre}")
@@ -54,6 +54,11 @@ public class MovieController {
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         movieService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping(path = "/findByName/{name}")
+    public ResponseEntity<Movie> findByName(@PathVariable String name){
+        return ResponseEntity.ok(movieService.findByName(name));
     }
 
 }
