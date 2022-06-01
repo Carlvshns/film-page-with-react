@@ -167,20 +167,20 @@ video {
 /*Mobile view port response*/
 @media screen and (max-width: 420px){
   .divForm{width: 380px;}
-  #my-video{width: 380px; height: 220px;}
+  #myvideo{width: 380px; height: 220px;}
   .mini-movie-card-container{width: 125px;}
   .mini-name-movie{width: 125px;}
 }
 
 @media screen and (max-width: 400px){
   .divForm{width: 360px;}
-  #my-video{width: 360px; height: 190px;}
+  #myvideo{width: 360px; height: 190px;}
   .mini-movie-card-container{width: 125px;}
   .mini-name-movie{width: 125px;}
 }
 @media screen and (max-width: 380px) {
   .divForm{width: 320px;}
-  #my-video{width: 320px; height: 169px;}
+  #myvideo{width: 320px; height: 169px;}
   .mini-movie-card-container{width: 100px;}
   .mini-name-movie{width: 101px;}
 }
@@ -192,56 +192,56 @@ video {
 @media screen and (min-width: 480px) {
   #synopsis{margin-left: 32px;}
   .divForm{width: 360px;}
-  #my-video{width: 360px; height: 190px;}
+  #myvideo{width: 360px; height: 190px;}
   .mini-movie-card-container{width: 115px;}
   .mini-name-movie{width: 115px;}
 }
 @media screen and (min-width: 640px) {
   .divForm{width: 640px;}
-  #my-video{width: 640px; height: 339px;}
+  #myvideo{width: 640px; height: 339px;}
   .mini-movie-card-container{width: 155px;}
   .mini-name-movie{width: 155px;}
 }
 @media screen and (min-width: 720px) {
-  #my-video{width: 640px; height: 339px;}
+  #myvideo{width: 640px; height: 339px;}
   .mini-movie-card-container{width: 139px;}
   .mini-name-movie{width: 139px;}
 }
 @media screen and (min-width: 1080px) {
-  #my-video{width: 640px; height: 339px;}
+  #myvideo{width: 640px; height: 339px;}
   .mini-movie-card-container{width: 175px;}
   .mini-name-movie{width: 175px;}
 }
 @media screen and (min-width: 1280px) {
-  #my-video{width: 640px; height: 339px;}
+  #myvideo{width: 640px; height: 339px;}
   .mini-movie-card-container{width: 155px;}
   .mini-name-movie{width: 155px;}
 }
 @media screen and (min-width: 1320px) {
-  #my-video{width: 640px; height: 339px;}
+  #myvideo{width: 640px; height: 339px;}
   .mini-movie-card-container{width: 128px;}
   .mini-name-movie{width: 128px;}
 }
 @media screen and (min-width: 1440px) {
-  #my-video{width: 640px; height: 339px;}
+  #myvideo{width: 640px; height: 339px;}
   .mini-movie-card-container{width: 139.5px;}
   .mini-name-movie{width: 139.5px;}
 }
 @media screen and (min-width: 1920px) {
-  #my-video{width: 640px; height: 339px;}
+  #myvideo{width: 640px; height: 339px;}
   .mini-movie-card-container{width: 155,6px;}
   .mini-name-movie{width: 155.6px;}
 }
 @media screen and (min-width: 2160px) {
   .divForm{width: 700px;}
-  #my-video{width: 690px; height: 365px;}
+  #myvideo{width: 690px; height: 365px;}
   .mini-movie-card-container{width: 265.5px;}
   .mini-name-movie{width: 265.5px;}
   .mini-image-movie-global{height: 320px}
 }
 @media screen and (min-width: 3840px) {
   .divForm{width: 768px;}
-  #my-video{width: 720px; height: 640px;}
+  #myvideo{width: 720px; height: 640px;}
   .mini-movie-card-container{width: 315.5px;}
   .mini-name-movie{width: 315.5px;}
   .mini-image-movie-global{height: 380px}

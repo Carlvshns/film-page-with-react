@@ -59,6 +59,23 @@ function FormCard( { movieUuid } : Props){
         });
     }, [movie?.genre, pageNumber]);
 
+    useEffect(() => {
+        var request = new XMLHttpRequest();
+        request.open('GET', `${movie?.adress}`, true);
+        request.responseType = 'blob';
+        request.onload = function() {
+            var reader = new FileReader();
+            reader.readAsDataURL(request.response);
+            reader.onload =  function(e){
+                let blob = new Blob([request.response], {type: 'video/webm'});
+                var videoElement = document.getElementById('myvideo') as HTMLVideoElement
+                console.log(blob);
+                videoElement.src = URL.createObjectURL(blob);
+            }
+        }
+        request.send();
+    }, [movie?.adress]);
+
     return (
         <>
         <div className="divForm">
@@ -66,7 +83,7 @@ function FormCard( { movieUuid } : Props){
             <h3 id="nameMovieInForm">{movie?.name}</h3>
         <div>
         <hr />
-        <video ref={inputRef} src={movie?.adress} id="my-video" className="js-player">        
+        <video ref={inputRef} id="myvideo" className="js-player">        
         </video>
         <hr />
         <div>
