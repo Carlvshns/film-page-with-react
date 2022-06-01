@@ -67,9 +67,8 @@ function FormCard( { movieUuid } : Props){
             var reader = new FileReader();
             reader.readAsDataURL(request.response);
             reader.onload =  function(e){
-                let blob = new Blob([request.response], {type: 'video/webm'});
+                let blob = new Blob([request.response], {type: 'video/mp4'});
                 var videoElement = document.getElementById('myvideo') as HTMLVideoElement
-                console.log(blob);
                 videoElement.src = URL.createObjectURL(blob);
             }
         }
