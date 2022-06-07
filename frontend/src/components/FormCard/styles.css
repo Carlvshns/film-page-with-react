@@ -22,7 +22,7 @@
     margin-top: 4px;
     font-family: 'Bebas Neue';
   }
-  #synopsis {
+#synopsis {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -38,33 +38,6 @@ video {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-}
-#whatsappButton {
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-right: 1.5px;
-  font-family: Helvetica;
-}
-#whatsappButton:hover {
-  text-decoration: none;
-  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
-}
-#facebookButton {
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 1.5px;
-  font-family: 'Segoe UI';
-}
-#facebookButton:hover {
-  text-decoration: none;
-  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
-}
-#share {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
 }
 #mini-genres {
   margin-top: 4px;
@@ -172,6 +145,11 @@ video {
   .mini-name-movie{width: 125px;}
 }
 
+@media screen and (max-width: 412px){
+  .mini-movie-card-container{width: 132px;}
+  .mini-name-movie{width: 132px;}
+}
+
 @media screen and (max-width: 400px){
   .divForm{width: 360px;}
   #myvideo{width: 360px; height: 190px;}
@@ -245,10 +223,4 @@ video {
   .mini-movie-card-container{width: 315.5px;}
   .mini-name-movie{width: 315.5px;}
   .mini-image-movie-global{height: 380px}
-}
-
-/*responsive font-size*/
-@media screen and (max-width: 630px){
-  #whatsappButton{font-size: 11px;}
-  #facebookButton{font-size: 11px;}
 }
