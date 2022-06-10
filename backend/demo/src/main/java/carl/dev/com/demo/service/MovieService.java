@@ -11,12 +11,11 @@ import carl.dev.com.demo.repository.MovieRepository;
 public class MovieService {
     
     private MovieRepository movieRepository;
+    private MasterService masterService;
 
     public MovieService(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
-
-    private String pass = "rockblin0123";
 
     public Page<Movie> findAll(Pageable pageable){
         return movieRepository.findAll(pageable);
@@ -35,7 +34,8 @@ public class MovieService {
     }
 
     public Movie save(Movie movie, String pass){
-        if(pass.equals(this.pass)){
+        String passphrase = masterService.findByPassphraseAndReturnPassphraseString(pass);
+        if(pass.equals(passphrase)){
         return movieRepository.save(movie);
         }else{
             throw new IllegalArgumentException("Senha incorreta/Invalid password");
@@ -43,7 +43,8 @@ public class MovieService {
     }
 
     public void deleteById(Long id, String pass){
-        if(pass.equals(this.pass)){
+        String passphrase = masterService.findByPassphraseAndReturnPassphraseString(pass);
+        if(pass.equals(passphrase)){
         movieRepository.deleteById(id);
         }else{
             throw new IllegalArgumentException("Senha incorreta/Invalid password");

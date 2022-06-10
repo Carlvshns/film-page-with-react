@@ -122,7 +122,7 @@ public class MovieControllerTest {
     @DisplayName("save returns movie when sucessful")
     void save_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        ResponseEntity<Movie> movie = movieController.save(expectedMovie, "rockblin0123");
+        ResponseEntity<Movie> movie = movieController.save(expectedMovie, "rock");
 
         Assertions.assertNotNull(movie);
 
@@ -134,7 +134,7 @@ public class MovieControllerTest {
     @Test
     @DisplayName("delete removes movie when sucessful")
     void delete_RemovesMovie_WhenSucessful() {
-        Assertions.assertDoesNotThrow(() -> movieController.deleteById(1L, "rockblin0123"));
+        Assertions.assertDoesNotThrow(() -> movieController.deleteById(1L, "rock"));
     }
 
     @Test

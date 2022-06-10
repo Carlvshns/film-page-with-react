@@ -122,7 +122,7 @@ public class MovieServiceTest {
     @DisplayName("save returns movie when sucessful")
     void save_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movie = movieService.save(expectedMovie, "rockblin0123");
+        Movie movie = movieService.save(expectedMovie, "rock");
 
         Assertions.assertNotNull(movie);
 
@@ -134,7 +134,7 @@ public class MovieServiceTest {
     @Test
     @DisplayName("delete removes movie when sucessful")
     void delete_RemovesMovie_WhenSucessful() {
-        Assertions.assertDoesNotThrow(() -> movieService.deleteById(1L, "rockblin0123"));
+        Assertions.assertDoesNotThrow(() -> movieService.deleteById(1L, "rock"));
     }
 
     @Test
