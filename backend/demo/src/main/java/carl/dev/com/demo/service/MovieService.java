@@ -30,7 +30,7 @@ public class MovieService {
         return movieRepository.findById(id).get();
     }
 
-    public Page<Movie> findByGenre(String genre, Pageable pageable){
+    public Page<Movie> findByGenreIgnoreCaseContaining(String genre, Pageable pageable){
         return movieRepository.findByGenreIgnoreCaseContaining(genre, pageable);
     }
 

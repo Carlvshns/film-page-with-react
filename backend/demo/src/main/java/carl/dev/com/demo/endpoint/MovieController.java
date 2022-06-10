@@ -41,8 +41,8 @@ public class MovieController {
     }
 
     @GetMapping(path = "/findByGenre/{genre}")
-    public ResponseEntity<Page<Movie>> findByGenre(@PathVariable String genre, Pageable pageable){
-        return new ResponseEntity<>(movieService.findByGenre(genre, pageable), HttpStatus.OK);
+    public ResponseEntity<Page<Movie>> findByGenreIgnoreCaseContaining(@PathVariable String genre, Pageable pageable){
+        return new ResponseEntity<>(movieService.findByGenreIgnoreCaseContaining(genre, pageable), HttpStatus.OK);
     }
 
     @PutMapping(path = "/create/{pass}")

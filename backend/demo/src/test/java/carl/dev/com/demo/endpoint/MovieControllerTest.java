@@ -43,7 +43,7 @@ public class MovieControllerTest {
         BDDMockito.when(movieServiceMock.findByNameIgnoreCaseContaining(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
         .thenReturn(moviePage);
 
-        BDDMockito.when(movieServiceMock.findByGenre(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
+        BDDMockito.when(movieServiceMock.findByGenreIgnoreCaseContaining(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
         .thenReturn(moviePage);
 
         BDDMockito.when(movieServiceMock.save(ArgumentMatchers.any(Movie.class), ArgumentMatchers.anyString()))
@@ -107,7 +107,7 @@ public class MovieControllerTest {
     void findByGenre_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieGenre = MovieCreator.movieCreator().getGenre();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieController.findByGenre(expectedMovieGenre, pageable).getBody();
+        Page<Movie> movies = movieController.findByGenreIgnoreCaseContaining(expectedMovieGenre, pageable).getBody();
 
         Assertions.assertNotNull(movies);
 

@@ -107,7 +107,7 @@ public class MovieServiceTest {
     void findByGenre_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieGenre = MovieCreator.movieCreator().getGenre();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieService.findByGenre(expectedMovieGenre, pageable);
+        Page<Movie> movies = movieService.findByGenreIgnoreCaseContaining(expectedMovieGenre, pageable);
 
         Assertions.assertNotNull(movies);
 

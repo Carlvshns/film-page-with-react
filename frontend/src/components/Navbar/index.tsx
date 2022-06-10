@@ -14,11 +14,11 @@ function Navbar() {
         }
     };
 
-    const superHeroiSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const quadrinhosSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
         
-        return window.location.replace(`/genre/super-heroi`);
+        return window.location.replace(`/genre/quadrinhos`);
     };
 
     const filmeDeAnimeSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -70,7 +70,7 @@ function Navbar() {
         return window.location.replace(`/genre/acao`);
     };
 
-    const sobrenaturalSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const terrorSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
         
@@ -82,6 +82,20 @@ function Navbar() {
         event.preventDefault();
         
         return window.location.replace(`/genre/desenho`);
+    };
+
+    const historiaSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/historia`);
+    };
+
+    const crimeSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+        event.preventDefault();
+        
+        return window.location.replace(`/genre/crime`);
     };
 
     const inicioSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -109,8 +123,8 @@ function Navbar() {
                 <div className="dropdown">
                     <button className="dropbtn">Generos <i className="fa fa-caret-down"></i></button>
                     <div className="dropdown-content">
-                    <form onSubmit={superHeroiSubmit}>
-                        <button type="submit" value="submit" className="genreButton">Super-heroi</button>
+                    <form onSubmit={quadrinhosSubmit}>
+                        <button type="submit" value="submit" className="genreButton">Quadrinhos</button>
                     </form>
                     <form onSubmit={filmeDeAnimeSubmit}>
                         <button type="submit" value="submit" className="genreButton">Filmes de Anime</button>
@@ -133,11 +147,17 @@ function Navbar() {
                     <form onSubmit={acaoSubmit}>
                         <button type="submit" value="submit" className="genreButton">Açao</button>
                     </form>
-                    <form onSubmit={sobrenaturalSubmit}>
+                    <form onSubmit={terrorSubmit}>
                         <button type="submit" value="submit" className="genreButton">Terror</button>
                     </form>
                     <form onSubmit={desenhoSubmit}>
                         <button type="submit" value="submit" className="genreButton">Desenhos</button>
+                    </form>
+                    <form onSubmit={historiaSubmit}>
+                        <button type="submit" value="submit" className="genreButton">Historia</button>
+                    </form>
+                    <form onSubmit={crimeSubmit}>
+                        <button type="submit" value="submit" className="genreButton">Crime</button>
                     </form>
                     </div>
                 </div>
