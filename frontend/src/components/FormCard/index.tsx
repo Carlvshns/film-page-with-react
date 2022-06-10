@@ -1,8 +1,7 @@
 import axios from "axios";
-import React from "react";
 import { createRef, useEffect, useState } from "react";
 import { Movie, MoviePage } from "../../types/movie";
-import { BASE_URL, FRONT_URL } from "../../utils/requests";
+import { BASE_URL } from "../../utils/requests";
 import MiniMovieCard from "../MiniMovieCard";
 import './styles.css';
 
@@ -39,27 +38,11 @@ function FormCard( { movieUuid } : Props){
     console.log(setPageNumber+" "+page);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/findByGenre/${movie?.genre}?size=12&page=${pageNumber}&sort=id`).then(response => {
+        axios.get(`${BASE_URL}/movies/findByGenre/${movie?.genre}?size=6&page=${pageNumber}&sort=id`).then(response => {
             const data = response.data as MoviePage;
             setPage(data);
         });
     }, [movie?.genre, pageNumber]);
-
-    useEffect(() => {
-        var request = new XMLHttpRequest();
-        request.open('GET', `${movie?.adress}`, true);
-        request.responseType = 'blob';
-        request.onload = function() {
-            var reader = new FileReader();
-            reader.readAsDataURL(request.response);
-            reader.onload =  function(e){
-                let blob = new Blob([request.response], {type: 'video/mp4'});
-                var videoElement = document.getElementById('myvideo') as HTMLVideoElement
-                videoElement.src = URL.createObjectURL(blob);
-            }
-        }
-        request.send();
-    }, [movie?.adress]);
 
     return (
         <>
@@ -68,7 +51,7 @@ function FormCard( { movieUuid } : Props){
             <h3 id="nameMovieInForm">{movie?.name}</h3>
         <div>
         <hr />
-        <video ref={inputRef} id="myvideo" className="js-player">        
+        <video ref={inputRef} src={movie?.adress} id="myvideo" className="js-player">        
         </video>
         <hr />
         <div>
