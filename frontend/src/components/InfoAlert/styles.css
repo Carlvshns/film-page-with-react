@@ -31,7 +31,7 @@
 @media screen and (min-width: 320px){
   .alert{
     width: 240px;
-    height: 177px;
+    height: 168px;
     margin-left: 40px;
   }
 }
@@ -86,7 +86,7 @@
 @media screen and (min-width: 480px){
     .alert{
     width: 240px;
-    height: 177px;
+    height: 168px;
     margin-top: 15%;
     margin-left: 120px;
     }
@@ -94,7 +94,7 @@
 @media screen and (min-width: 640px){
   .alert{
   width: 220px;
-  height: 195px;
+  height: 168px;
   margin-top: 15%;
   margin-left: 210px;
   }
@@ -102,7 +102,7 @@
 @media screen and (min-width: 720px){
   .alert{
   width: 250px;
-  height: 176px;
+  height: 138px;
   margin-top: 10%;
   margin-left: 235px;
   }
@@ -110,40 +110,35 @@
 @media screen and (min-width: 768px){
   .alert{
   width: 255px;
-  height: 173px;
-  margin-top: 10%;
+  height: 141px;
   margin-left: 256.5px;
   }
 }
 @media screen and (min-width: 1080px){
   .alert{
   width: 300px;
-  height: 152px;
-  margin-top: 10%;
+  height: 146px;
   margin-left: 390px;
   }
 }
 @media screen and (min-width: 1280px){
   .alert{
   width: 306px;
-  height: 151px;
-  margin-top: 10%;
+  height: 146px;
   margin-left: 487px;
   }
 }
 @media screen and (min-width: 1330px){
   .alert{
   width: 300px;
-  height: 152px;
-  margin-top: 8%;
+  height: 140px;
   margin-left: 515px;
   }
 }
 @media screen and (min-width: 1440px){
   .alert{
   width: 310px;
-  height: 152px;
-  margin-top: 10%;
+  height: 145px;
   margin-left: 565px;
   }
 }
@@ -151,9 +146,7 @@
   .alert{
   width: 320px;
   height: 147px;
-  margin-top: 15%;
   margin-left: 800px;
-
   }
 }
 
@@ -161,17 +154,13 @@
   .alert{
   width: 325px;
   height: 143px;
-  margin-top: 10%;
   margin-left: 917.5px;
-
   }
 }
 @media screen and (min-width: 3840px){
   .alert{
   width: 330px;
   height: 140px;
-  margin-top: 8%;
   margin-left: 1755px;
-
   }
 }

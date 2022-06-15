@@ -5,7 +5,7 @@ function InfoAlert(){
     return(
         <div className="alert"> 
             <div data-dismiss="alert"><button className="closebtn">x</button></div>
-            <strong>Atenção!</strong> Nós não hospedamos videos em nossos servidores(ainda), se ao dar 'Play' outras abas se abrirem, feche-a e tente dar 'Play' novamente.
+            <strong>Atenção!</strong> Caso o video não reproduza, recarregar a paginá para ativar o Player poder ser necessário. Grato!
         </div>
     )
 }

@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import InfoAlert from "../../components/InfoAlert";
 import MovieCard from "../../components/MovieCard";
 import Pagination from "../../components/Pagination";
+import SlideMovies from "../../components/SlideMovies";
 import { MoviePage } from "../../types/movie";
 import { BASE_URL } from "../../utils/requests";
 
@@ -34,7 +36,9 @@ function Listing(){
 
     return(
         <>
+        <InfoAlert />
         <Pagination page={page} onChange={handlePageChange} />
+        <SlideMovies />
         <div className="listing-container">
             <div className="rows">
                 {page.content.map(movie =>(

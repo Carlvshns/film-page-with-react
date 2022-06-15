@@ -358,7 +358,7 @@ a {
 }
 @media screen and (max-width: 768px) {
   #input{width: 290px}
-  .movie-card-container{width: 215px; margin-bottom: 30px; margin-left: 30px; }
+  .movie-card-container{width: 215px; margin-bottom: 30.75px; margin-left: 30.75px; }
   .movie-card-container:hover .image-movie-global{
     width: 95%;
     max-height: 289.25px;
@@ -496,7 +496,7 @@ a {
   .movie-card-3rd-container{width: 125px}
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 385px) {
   .movie-card-container{width: 110px; height: 135px;margin-left: 12.5px; margin-bottom: 12.5px;}
   .image-movie-global{height: 135px}
   .movie-card-container:hover .image-movie-global{
@@ -522,7 +522,7 @@ a {
     margin-left: 2.75px;
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 365px) {
   #gitLogo{width: 32px; height: 27px;}
   .movie-card-container{width: 110px; height: 135px;margin-left: 7.5px; margin-bottom: 7.5px;}
   .image-movie-global{height: 135px}
@@ -556,7 +556,7 @@ a {
     margin-left: 2.75px;
   }
 }
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 335px) {
   .movie-card-container{width: 105px; height: 130px;margin-left: 3.5px; margin-bottom: 3.5px;}
   .image-movie-global{height: 130px}
   .movie-card-container:hover .image-movie-global{
@@ -567,7 +567,7 @@ a {
     margin-left: 2.625px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 325px) {
   .movie-card-container{width: 105px; height: 130px;margin-left: 1.25px; margin-bottom: 1.25px;}
   .image-movie-global{height: 130px}
   .movie-card-container:hover .image-movie-global{
