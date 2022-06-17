@@ -1,23 +1,23 @@
-.dsmovie-pagination-container {
+.pagination-container {
     padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.dsmovie-pagination-box {
+.pagination-box {
     width: 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.dsmovie-pagination-box form {
+.pagination-box form {
     width: 100%;
     display: flex;
 }
 
-.dsmovie-pagination-button {
+.pagination-button {
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -29,33 +29,33 @@
     cursor: pointer;
 }
 
-.dsmovie-pagination-button svg {
+.pagination-button svg {
     filter: brightness(0) saturate(100%) invert(26%) sepia(19%) saturate(7395%) hue-rotate(234deg) brightness(89%) contrast(92%);
 }
 
-.dsmovie-pagination-button:disabled {
+.pagination-button:disabled {
     border: 1px solid hsl(0, 100%, 50%);
     cursor: unset;
 }
 
-.dsmovie-pagination-button:disabled svg {
+.pagination-button:disabled svg {
     filter: none;
 }
 
-.dsmovie-pagination-container p {
+.pagination-container p {
     margin: 0;
     font-size: 12px;
     color: var(--color-primary);
 }
 
-.dsmovie-flip-horizontal {
+.flip-horizontal {
     transform: rotate(180deg);
 }
 #pageNumbers{
     color: #ffffff;
 }
 
-.dsmovie-pagination-button:enabled:hover{
+.pagination-button:enabled:hover{
     width: 45px;
     height: 45px;
     margin-top: -5px;
@@ -71,8 +71,8 @@
 }
   
 @media screen and (min-width: 3840px) and (min-height: 2160px) {
-    .dsmovie-pagination-button{width: 45px; height: 45px;}
-    .dsmovie-pagination-button:enabled:hover{
+    .pagination-button{width: 45px; height: 45px;}
+    .pagination-button:enabled:hover{
         width: 50.625px;
         height: 50.625px;
         margin-top: -5.625px;
