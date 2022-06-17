@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Create from './pages/create';
 import Form from './pages/form';
 import Genre from './pages/genre';
-import Listing from './pages/Listing';
+import Listing from './pages/listing';
 import Search from './pages/search';
 
 function App() {
