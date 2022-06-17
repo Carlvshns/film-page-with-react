@@ -25,6 +25,7 @@
   
 .closebtn:hover {
     color: #ff2929;
+    cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
   }
 
 /*Mobile viewport*/
