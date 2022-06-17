@@ -354,7 +354,17 @@ a {
 }
 @media screen and (max-width: 851px) {
   #input{width: 300px}
-  .movie-card-container{width: 210px; margin-left: 2.2px; margin-bottom: 2.2px;}
+  .movie-card-container{width: 211px; margin-left: 1.5px; margin-bottom: 1.5px;}
+}
+@media screen and (max-width: 776px){
+  .movie-card-container{width: 215px; margin-bottom: 32.5px; margin-left: 32.5px; }
+  .movie-card-container:hover .image-movie-global{
+    width: 95%;
+    max-height: 289.25px;
+    margin-top: 5.375px;
+    margin-bottom: 5.375px;
+    margin-left: 5.375px;
+  }
 }
 @media screen and (max-width: 768px) {
   #input{width: 290px}
@@ -368,7 +378,7 @@ a {
   }
 }
 @media screen and (max-width: 729px) {
-  .movie-card-container{width: 215px; margin-bottom: 20px; margin-left: 20px; }
+  .movie-card-container{width: 215px; margin-bottom: 21px; margin-left: 21px; }
   .movie-card-container:hover .image-movie-global{
     width: 95%;
     max-height: 289.25px;
