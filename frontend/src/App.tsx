@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Create from './pages/create';
+import CreateSearch from './pages/create/create-search';
 import Form from './pages/form';
 import Genre from './pages/genre';
 import Listing from './pages/listing';
@@ -14,6 +15,9 @@ function App() {
        <Routes>
          <Route path="/" element={<Listing />} />
          <Route path="/create" element={<Create />} />
+         <Route path="/create-search">
+           <Route path=":movieName" element={<CreateSearch />} />
+         </Route>
          <Route path="/form">
            <Route path=":movieUuid" element={<Form />} />
          </Route>
