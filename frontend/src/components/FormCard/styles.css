@@ -78,7 +78,7 @@ video {
   color: #ffffff;
   border: 1px solid #ffffff;
   box-shadow: 20px 0px 40px 0px #ffffff;
-  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 
 /*effects in mini-moviesc container*/
@@ -104,7 +104,7 @@ video {
   border-radius: 8px 8px 0 0;
 }
 .mini-image-movie-global:hover {
-  cursor: url('../../assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 
 .middle {

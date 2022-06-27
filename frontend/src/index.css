@@ -8,7 +8,7 @@ body {
   background-color: #ff0000;
 }
 html {
-  cursor: url('./assets/img/cursor1-removebg-preview.png'), default;
+  cursor: url('https://drive.google.com/uc?export=download&id=1WpZOjtkiRI-v8ywaPwco_pAxbg-EIsed'), default;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -28,7 +28,7 @@ code {
   margin-right: 5px;
 }
 a {
-  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 #input {
   width: 500px;
@@ -37,7 +37,7 @@ a {
   transition: 1s;
 }
 #input:hover {
-  cursor: url('./assets/img/cursor3-removebg-preview.png'), text;
+  cursor: url('https://drive.google.com/uc?export=download&id=1C1AsbrgaLp515fF8ku9OBOyGiWnUpTHl'), text;
 }
 #input:focus {
   outline: none;
@@ -54,7 +54,7 @@ a {
 }
 #buttonSearch:hover {
   background-color: #ffffff;
-  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 #buttonSearch:hover .bi-search {
   fill: #000000;
@@ -78,7 +78,7 @@ a {
   border: none;
   background-color: #003cff;
   border-radius: 30px;
-  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 #inicioButton {
   background-color: #003cff;
@@ -97,7 +97,7 @@ a {
   border: none;
   background-color: #ffffff;
   color: #000000;
-  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 #paginationButton {
   display: flex;
@@ -158,7 +158,7 @@ a {
   border-radius: 8px 8px 0 0;
 }
 .image-movie-global:hover {
-  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 .divAssistirButton {
   display: flex;
@@ -192,7 +192,7 @@ a {
   border: 1px solid #ffffff;
   box-shadow: 20px 0px 40px 0px #ffffff;
   border-radius: 2.5px;
-  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 #nameMovieInForm {
   display: flex;
@@ -217,7 +217,7 @@ a {
 .dropbtn:hover {
   background-color: #003cff;
   color: #ffffff;
-  cursor: url('./assets/img/cursor2-removebg-preview.png'), pointer;
+  cursor: url('https://drive.google.com/uc?export=download&id=1DNqVll2QsSYlZJvuunRljRpgjXhseR4S'), pointer;
 }
 
 /* The container <div> - needed to position the dropdown content */
