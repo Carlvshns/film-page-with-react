@@ -129,11 +129,11 @@
   margin-left: 487px;
   }
 }
-@media screen and (min-width: 1330px){
+@media screen and (min-width: 1360px){
   .alert{
   width: 300px;
   height: 140px;
-  margin-left: 515px;
+  margin-left: 533px;
   }
 }
 @media screen and (min-width: 1440px){

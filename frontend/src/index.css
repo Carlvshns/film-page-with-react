@@ -311,7 +311,7 @@ a {
 }
 @media screen and (max-width: 1366px) {
   #input{width: 330px}
-  .movie-card-container{width:215px; margin-bottom: 4px; margin-left: 4px;}
+  .movie-card-container{width:215px; margin-bottom: 8px; margin-left: 8px;}
   .movie-card-container:hover .image-movie-global{
     width: 95%;
     max-height: 289.25px;
