@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tb_movie")
@@ -13,11 +14,17 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull(message = "The field 'name' is  mandatory")
     private String name;
+    @NotNull(message = "The field 'image' is  mandatory")
     private String image;
+    @NotNull(message = "The field 'adress' is  mandatory")
     private String adress;
+    @NotNull(message = "The field 'synopsis' is  mandatory")
     private String synopsis;
+    @NotNull(message = "The field 'genre' is  mandatory")
     private String genre;
+    @NotNull(message = "The field 'uuid' is  mandatory")
     private String uuid;
 
     public Movie() {
