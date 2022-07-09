@@ -3,59 +3,78 @@ package carl.dev.com.demo.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import carl.dev.com.demo.domain.Movie;
+import carl.dev.com.demo.dto.MovieDTO;
+import carl.dev.com.demo.exception.InvalidPassphraseException;
 import carl.dev.com.demo.repository.MovieRepository;
 
 @Service
+@Transactional
 public class MovieService {
     
     private MovieRepository movieRepository;
     private MasterService masterService;
 
-    public MovieService(MovieRepository movieRepository) {
+    public MovieService(MovieRepository movieRepository, MasterService masterService) {
         this.movieRepository = movieRepository;
+        this.masterService = masterService;
     }
 
-    public Page<Movie> findAll(Pageable pageable){
-        return movieRepository.findAll(pageable);
+    public Page<MovieDTO> findAll(Pageable pageable){
+        Page<Movie> movie = movieRepository.findAll(pageable);
+        Page<MovieDTO> movieDTOPage = movie.map(x -> new MovieDTO(x));
+        return movieDTOPage;
     }
 
-    public Page<Movie> findByNameIgnoreCaseContaining(String name, Pageable pageable){
-        return movieRepository.findByNameIgnoreCaseContaining(name, pageable);
+    public Page<MovieDTO> findByNameIgnoreCaseContaining(String name, Pageable pageable){
+        Page<Movie> movie = movieRepository.findByNameIgnoreCaseContaining(name, pageable);
+        Page<MovieDTO> movieDTOPage = movie.map(x -> new MovieDTO(x));
+        return movieDTOPage;
     }
 
-    public Movie findById(Long id){
-        return movieRepository.findById(id).get();
+    public MovieDTO findById(Long id){
+        Movie movie = movieRepository.findById(id).get();
+        MovieDTO movieDTO = new MovieDTO(movie);
+        return movieDTO;
     }
 
-    public Page<Movie> findByGenreIgnoreCaseContaining(String genre, Pageable pageable){
-        return movieRepository.findByGenreIgnoreCaseContaining(genre, pageable);
+    public Page<MovieDTO> findByGenreIgnoreCaseContaining(String genre, Pageable pageable){
+        Page<Movie> movie = movieRepository.findByGenreIgnoreCaseContaining(genre, pageable);
+        Page<MovieDTO> movieDTOPage = movie.map(x -> new MovieDTO(x));
+        return movieDTOPage;
     }
 
-    public Movie save(Movie movie, String pass){
+    public MovieDTO save(Movie movie, String pass){
         String passphrase = masterService.findByPassphraseAndReturnPassphraseString(pass);
         if(pass.equals(passphrase)){
-        return movieRepository.save(movie);
+            Movie movieSaved = movieRepository.save(movie);
+            MovieDTO movieDTO = new MovieDTO(movieSaved);
+            return movieDTO;
         }else{
-            throw new IllegalArgumentException("Senha incorreta/Invalid password");
+            throw new InvalidPassphraseException("Senha incorreta/Invalid password");
         }
     }
 
     public void deleteById(Long id, String pass){
         String passphrase = masterService.findByPassphraseAndReturnPassphraseString(pass);
         if(pass.equals(passphrase)){
-        movieRepository.deleteById(id);
+            movieRepository.deleteById(id);
         }else{
-            throw new IllegalArgumentException("Senha incorreta/Invalid password");
+            throw new InvalidPassphraseException("Senha incorreta/Invalid password");
         }
     }
    
-    public Movie findByName(String name){
-        return movieRepository.findByName(name);
+    public MovieDTO findByName(String name){
+        Movie movie = movieRepository.findByName(name);
+        MovieDTO movieDTO = new MovieDTO(movie);
+        return movieDTO;
     }
 
-    public Movie findByUuid(String uuid){
-        return movieRepository.findByUuid(uuid);
+    public MovieDTO findByUuid(String uuid){
+        Movie movie = movieRepository.findByUuid(uuid);
+        MovieDTO movieDTO = new MovieDTO(movie);
+        return movieDTO;
     }
 }

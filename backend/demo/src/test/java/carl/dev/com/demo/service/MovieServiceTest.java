@@ -18,7 +18,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import carl.dev.com.demo.domain.Master;
 import carl.dev.com.demo.domain.Movie;
+import carl.dev.com.demo.dto.MovieDTO;
+import carl.dev.com.demo.exception.InvalidPassphraseException;
+import carl.dev.com.demo.repository.MasterRepository;
 import carl.dev.com.demo.repository.MovieRepository;
 import carl.dev.com.demo.util.MovieCreator;
 
@@ -28,11 +32,17 @@ public class MovieServiceTest {
     @InjectMocks
     private MovieService movieService;
     @Mock
+    private MasterService masterService;
+    @Mock
     private MovieRepository movieRepositoryMock;
+    @Mock
+    private MasterRepository masterRepositoryMock;
 
     @BeforeEach
     void setUp(){
         PageImpl<Movie> moviePage = new PageImpl<>(List.of(MovieCreator.movieCreator()));
+        Master master = new Master();
+        master.setPassphrase("rock");
         
         BDDMockito.when(movieRepositoryMock.findAll(ArgumentMatchers.any(PageRequest.class)))
         .thenReturn(moviePage);
@@ -45,6 +55,9 @@ public class MovieServiceTest {
 
         BDDMockito.when(movieRepositoryMock.findByGenreIgnoreCaseContaining(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
         .thenReturn(moviePage);
+
+        BDDMockito.when(masterRepositoryMock.findByPassphrase(ArgumentMatchers.anyString())).thenReturn(master);
+        BDDMockito.when(masterService.findByPassphraseAndReturnPassphraseString(ArgumentMatchers.anyString())).thenReturn("rock");
 
         BDDMockito.when(movieRepositoryMock.save(ArgumentMatchers.any(Movie.class)))
         .thenReturn(MovieCreator.movieCreator());
@@ -62,7 +75,7 @@ public class MovieServiceTest {
     @DisplayName("findAll returns list of movie inside page object when sucessful")
     void findAll_ReturnsListOfMoviesInsidePageObect_WhenSucessful() {
         String expectedMovieName = MovieCreator.movieCreator().getName();
-        Page<Movie> moviePage = movieService.findAll(PageRequest.of(1, 1));
+        Page<MovieDTO> moviePage = movieService.findAll(PageRequest.of(1, 1));
 
         Assertions.assertNotNull(moviePage);
 
@@ -77,7 +90,7 @@ public class MovieServiceTest {
     @DisplayName("findById returns movie when sucessful")
     void findById_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieService.findById(1L);
+        MovieDTO movies = movieService.findById(1L);
 
         Assertions.assertNotNull(movies);
 
@@ -91,7 +104,7 @@ public class MovieServiceTest {
     void findByNameIgnoringCase_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieName = MovieCreator.movieCreator().getName();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieService.findByNameIgnoreCaseContaining(expectedMovieName, pageable);
+        Page<MovieDTO> movies = movieService.findByNameIgnoreCaseContaining(expectedMovieName, pageable);
 
         Assertions.assertNotNull(movies);
 
@@ -107,7 +120,7 @@ public class MovieServiceTest {
     void findByGenre_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieGenre = MovieCreator.movieCreator().getGenre();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieService.findByGenreIgnoreCaseContaining(expectedMovieGenre, pageable);
+        Page<MovieDTO> movies = movieService.findByGenreIgnoreCaseContaining(expectedMovieGenre, pageable);
 
         Assertions.assertNotNull(movies);
 
@@ -122,7 +135,7 @@ public class MovieServiceTest {
     @DisplayName("save returns movie when sucessful")
     void save_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movie = movieService.save(expectedMovie, "rock");
+        MovieDTO movie = movieService.save(expectedMovie, "rock");
 
         Assertions.assertNotNull(movie);
 
@@ -138,24 +151,24 @@ public class MovieServiceTest {
     }
 
     @Test
-    @DisplayName("save throws IllegalArgumentException when fail and pass not matcher")
-    void save_throwsIllegalArgumentException_WhenPassNotMatcher() {
+    @DisplayName("save throws InvalidPassphraseException when fail and pass not matcher")
+    void save_throwsInvalidPassphraseException_WhenPassNotMatcher() {
         Movie expectedMovie = MovieCreator.movieCreator();
 
-        Assertions.assertThrows(IllegalArgumentException.class,() -> movieService.save(expectedMovie, ""));
+        Assertions.assertThrows(InvalidPassphraseException.class, () -> movieService.save(expectedMovie, ""));
     }
 
     @Test
-    @DisplayName("delete throws IllegalArgumentException when fail and pass not matcher")
-    void delete_throwsIllegalArgumentException_WhenPassNotMatcher() {
-        Assertions.assertThrows(IllegalArgumentException.class,() -> movieService.deleteById(1L, ""));
+    @DisplayName("delete throws InvalidPassphraseException when fail and pass not matcher")
+    void delete_throwsInvalidPassphraseException_WhenPassNotMatcher() {
+        Assertions.assertThrows(InvalidPassphraseException.class, () -> movieService.deleteById(1L, ""));
     }
 
     @Test
     @DisplayName("findByName returns movie when sucessful")
     void findByName_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieService.findByName(expectedMovie.getName());
+        MovieDTO movies = movieService.findByName(expectedMovie.getName());
 
         Assertions.assertNotNull(movies);
 
@@ -168,7 +181,7 @@ public class MovieServiceTest {
     @DisplayName("findByUuid returns movie when sucessful")
     void findByUuid_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieService.findByUuid(expectedMovie.getUuid());
+        MovieDTO movies = movieService.findByUuid(expectedMovie.getUuid());
 
         Assertions.assertNotNull(movies);
 

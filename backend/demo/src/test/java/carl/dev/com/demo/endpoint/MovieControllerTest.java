@@ -19,8 +19,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import carl.dev.com.demo.domain.Movie;
+import carl.dev.com.demo.dto.MovieDTO;
 import carl.dev.com.demo.service.MovieService;
 import carl.dev.com.demo.util.MovieCreator;
+import carl.dev.com.demo.util.MovieDTOCreator;
 
 @ExtendWith(SpringExtension.class)
 public class MovieControllerTest {
@@ -33,36 +35,37 @@ public class MovieControllerTest {
     @BeforeEach
     void setUp(){
         PageImpl<Movie> moviePage = new PageImpl<>(List.of(MovieCreator.movieCreator()));
+        Page<MovieDTO> movieDTOPage = moviePage.map(x -> new MovieDTO(x));
         
         BDDMockito.when(movieServiceMock.findAll(ArgumentMatchers.any(PageRequest.class)))
-        .thenReturn(moviePage);
+        .thenReturn(movieDTOPage);
 
         BDDMockito.when(movieServiceMock.findById(ArgumentMatchers.anyLong()))
-        .thenReturn(MovieCreator.movieCreator());
+        .thenReturn(MovieDTOCreator.movieDTOCreator());
 
         BDDMockito.when(movieServiceMock.findByNameIgnoreCaseContaining(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
-        .thenReturn(moviePage);
+        .thenReturn(movieDTOPage);
 
         BDDMockito.when(movieServiceMock.findByGenreIgnoreCaseContaining(ArgumentMatchers.anyString(), ArgumentMatchers.any(PageRequest.class)))
-        .thenReturn(moviePage);
+        .thenReturn(movieDTOPage);
 
         BDDMockito.when(movieServiceMock.save(ArgumentMatchers.any(Movie.class), ArgumentMatchers.anyString()))
-        .thenReturn(MovieCreator.movieCreator());
+        .thenReturn(MovieDTOCreator.movieDTOCreator());
 
         BDDMockito.doNothing().when(movieServiceMock).deleteById(ArgumentMatchers.anyLong(), ArgumentMatchers.anyString());
 
         BDDMockito.when(movieServiceMock.findByName(ArgumentMatchers.anyString()))
-        .thenReturn(MovieCreator.movieCreator());
+        .thenReturn(MovieDTOCreator.movieDTOCreator());
 
         BDDMockito.when(movieServiceMock.findByUuid(ArgumentMatchers.anyString()))
-        .thenReturn(MovieCreator.movieCreator());
+        .thenReturn(MovieDTOCreator.movieDTOCreator());
     }
 
     @Test
     @DisplayName("findAll returns list of movie inside page object when sucessful")
     void findAll_ReturnsListOfMoviesInsidePageObect_WhenSucessful() {
         String expectedMovieName = MovieCreator.movieCreator().getName();
-        Page<Movie> moviePage = movieController.findAll(PageRequest.of(1, 1)).getBody();
+        Page<MovieDTO> moviePage = movieController.findAll(PageRequest.of(1, 1)).getBody();
 
         Assertions.assertNotNull(moviePage);
 
@@ -77,7 +80,7 @@ public class MovieControllerTest {
     @DisplayName("findById returns movie when sucessful")
     void findById_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieController.findById(1L).getBody();
+        MovieDTO movies = movieController.findById(1L).getBody();
 
         Assertions.assertNotNull(movies);
 
@@ -91,7 +94,7 @@ public class MovieControllerTest {
     void findByNameIgnoringCase_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieName = MovieCreator.movieCreator().getName();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieController.findByNameIgnoreCaseContaining(expectedMovieName, pageable).getBody();
+        Page<MovieDTO> movies = movieController.findByNameIgnoreCaseContaining(expectedMovieName, pageable).getBody();
 
         Assertions.assertNotNull(movies);
 
@@ -107,7 +110,7 @@ public class MovieControllerTest {
     void findByGenre_ReturnsListOfMoviesInsidePageObject_WhenSucessful() {
         String expectedMovieGenre = MovieCreator.movieCreator().getGenre();
         Pageable pageable = Pageable.ofSize(1);
-        Page<Movie> movies = movieController.findByGenreIgnoreCaseContaining(expectedMovieGenre, pageable).getBody();
+        Page<MovieDTO> movies = movieController.findByGenreIgnoreCaseContaining(expectedMovieGenre, pageable).getBody();
 
         Assertions.assertNotNull(movies);
 
@@ -122,7 +125,7 @@ public class MovieControllerTest {
     @DisplayName("save returns movie when sucessful")
     void save_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        ResponseEntity<Movie> movie = movieController.save(expectedMovie, "rock");
+        ResponseEntity<MovieDTO> movie = movieController.save(expectedMovie, "rock");
 
         Assertions.assertNotNull(movie);
 
@@ -141,7 +144,7 @@ public class MovieControllerTest {
     @DisplayName("findByName returns movie when sucessful")
     void findByName_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieController.findByName(expectedMovie.getName()).getBody();
+        MovieDTO movies = movieController.findByName(expectedMovie.getName()).getBody();
 
         Assertions.assertNotNull(movies);
 
@@ -154,7 +157,7 @@ public class MovieControllerTest {
     @DisplayName("findByUuid returns movie when sucessful")
     void findByUuid_ReturnsMovie_WhenSucessful() {
         Movie expectedMovie = MovieCreator.movieCreator();
-        Movie movies = movieController.findByUuid(expectedMovie.getUuid()).getBody();
+        MovieDTO movies = movieController.findByUuid(expectedMovie.getUuid()).getBody();
 
         Assertions.assertNotNull(movies);
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import carl.dev.com.demo.domain.Movie;
+import carl.dev.com.demo.dto.MovieDTO;
 import carl.dev.com.demo.service.MovieService;
 
 @RestController
@@ -26,27 +27,27 @@ public class MovieController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<Movie>> findAll(Pageable pageable){
+    public ResponseEntity<Page<MovieDTO>> findAll(Pageable pageable){
         return ResponseEntity.ok(movieService.findAll(pageable));
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<Movie> findById(@PathVariable Long id){
+    public ResponseEntity<MovieDTO> findById(@PathVariable Long id){
         return ResponseEntity.ok(movieService.findById(id));
     }
 
     @GetMapping(path = "/search/{name}")
-    public ResponseEntity<Page<Movie>> findByNameIgnoreCaseContaining(@PathVariable String name, Pageable pageable){
+    public ResponseEntity<Page<MovieDTO>> findByNameIgnoreCaseContaining(@PathVariable String name, Pageable pageable){
         return new ResponseEntity<>(movieService.findByNameIgnoreCaseContaining(name, pageable), HttpStatus.OK);
     }
 
     @GetMapping(path = "/findByGenre/{genre}")
-    public ResponseEntity<Page<Movie>> findByGenreIgnoreCaseContaining(@PathVariable String genre, Pageable pageable){
+    public ResponseEntity<Page<MovieDTO>> findByGenreIgnoreCaseContaining(@PathVariable String genre, Pageable pageable){
         return new ResponseEntity<>(movieService.findByGenreIgnoreCaseContaining(genre, pageable), HttpStatus.OK);
     }
 
     @PutMapping(path = "/create/{pass}")
-    public ResponseEntity<Movie> save(@RequestBody Movie movie, @PathVariable String pass){
+    public ResponseEntity<MovieDTO> save(@RequestBody Movie movie, @PathVariable String pass){
         return new ResponseEntity<>(movieService.save(movie, pass), HttpStatus.CREATED);
     }
 
@@ -57,12 +58,12 @@ public class MovieController {
     }
 
     @GetMapping(path = "/findByName/{name}")
-    public ResponseEntity<Movie> findByName(@PathVariable String name){
+    public ResponseEntity<MovieDTO> findByName(@PathVariable String name){
         return ResponseEntity.ok(movieService.findByName(name));
     }
 
     @GetMapping(path = "/findByUuid/{uuid}")
-    public ResponseEntity<Movie> findByUuid(@PathVariable String uuid){
+    public ResponseEntity<MovieDTO> findByUuid(@PathVariable String uuid){
         return ResponseEntity.ok(movieService.findByUuid(uuid));
     }
 }
