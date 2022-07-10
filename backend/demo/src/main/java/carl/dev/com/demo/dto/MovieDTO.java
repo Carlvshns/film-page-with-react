@@ -1,15 +1,26 @@
 package carl.dev.com.demo.dto;
 
 import carl.dev.com.demo.domain.Movie;
+import io.swagger.annotations.ApiModelProperty;
 
 public class MovieDTO {
     
+    @ApiModelProperty(notes = "Movie ID", example = "1", required = true)
     private Long id;
+    @ApiModelProperty(notes = "Movie name/title", example = "The Batman", required = true)
     private String name;
+    @ApiModelProperty(notes = "Movie image URL", 
+    example = "https://www.themoviedb.org/t/p/original/pev79DpUojF5qaWwedoEa2LT31i.jpg")
     private String image;
+    @ApiModelProperty(notes = "Movie video/webm URL", 
+    example = "https://carlvs-cdn-video.herokuapp.com/medias/files/6212bfa1-2bb1-4144-999f-59d128b418aa")
     private String adress;
+    @ApiModelProperty(notes = "Movie resume synopsis", example = "The Batman show the history of...")
     private String synopsis;
+    @ApiModelProperty(notes = "Movie genre", example = "QUADRINHOS", required = true)
     private String genre;
+    @ApiModelProperty(notes = "Movie ID type UUID", example = "6af1e316-479f-4a1c-af7d-c5765f80edf9"
+    , required = true)
     private String uuid;
     
     public MovieDTO() {
