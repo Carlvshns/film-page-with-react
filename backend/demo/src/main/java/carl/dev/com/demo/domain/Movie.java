@@ -24,16 +24,16 @@ public class Movie {
     
     @NotNull(message = "The field 'image' is  mandatory")
     @ApiModelProperty(notes = "Movie image URL", 
-    example = "https://www.themoviedb.org/t/p/original/pev79DpUojF5qaWwedoEa2LT31i.jpg")
+    example = "https://www.themoviedb.org/t/p/original/pev79DpUojF5qaWwedoEa2LT31i.jpg", required = true)
     private String image;
     
     @NotNull(message = "The field 'adress' is  mandatory")
     @ApiModelProperty(notes = "Movie video/webm URL", 
-    example = "https://carlvs-cdn-video.herokuapp.com/medias/files/6212bfa1-2bb1-4144-999f-59d128b418aa")
+    example = "https://carlvs-cdn-video.herokuapp.com/medias/files/6212bfa1-2bb1-4144-999f-59d128b418aa", required = true)
     private String adress;
     
     @NotNull(message = "The field 'synopsis' is  mandatory")
-    @ApiModelProperty(notes = "Movie resume synopsis", example = "The Batman show the history of...")
+    @ApiModelProperty(notes = "Movie resume synopsis", example = "The Batman show the history of...", required = true)
     private String synopsis;
     
     @NotNull(message = "The field 'genre' is  mandatory")
