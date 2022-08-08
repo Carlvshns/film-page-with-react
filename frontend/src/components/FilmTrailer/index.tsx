@@ -9,14 +9,14 @@ type Props = {
     movieUuid : string;
 }
 
-function FormCard( { movieUuid } : Props){
+function FilmTrailer( { movieUuid } : Props){
 
     const [movie, setMovie] = useState<Movie>();
 
     const inputRef = createRef;
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/findByUuid/${movieUuid}`).then( response => {
+        axios.get(`${BASE_URL}/movies/find-by-uuid/${movieUuid}`).then( response => {
             setMovie(response.data);
         });
     }, [movieUuid, movie?.adress]);
@@ -38,7 +38,7 @@ function FormCard( { movieUuid } : Props){
     console.log(setPageNumber+" "+page);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/findByGenre/${movie?.genre}?size=6&page=${pageNumber}&sort=id`).then(response => {
+        axios.get(`${BASE_URL}/movies/find-by-genre/${movie?.genre}?size=6&page=${pageNumber}&sort=id`).then(response => {
             const data = response.data as MoviePage;
             setPage(data);
         });
@@ -75,4 +75,4 @@ function FormCard( { movieUuid } : Props){
     )
 }
 
-export default FormCard;
+export default FilmTrailer;

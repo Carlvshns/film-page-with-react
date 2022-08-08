@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Create from './pages/create';
 import CreateSearch from './pages/create/create-search';
-import Form from './pages/form';
+import Film from './pages/film';
 import Genre from './pages/genre';
 import Listing from './pages/listing';
 import Search from './pages/search';
@@ -18,8 +18,8 @@ function App() {
          <Route path="/create-search">
            <Route path=":movieName" element={<CreateSearch />} />
          </Route>
-         <Route path="/form">
-           <Route path=":movieUuid" element={<Form />} />
+         <Route path="/film">
+           <Route path=":movieUuid" element={<Film />} />
          </Route>
          <Route path="/search">
            <Route path=":movieName" element={<Search />} />

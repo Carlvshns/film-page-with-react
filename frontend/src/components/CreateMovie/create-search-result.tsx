@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { MoviePage } from "../../types/movie";
 import { BASE_URL } from "../../utils/requests";
 import './styles.css';
+import * as C from './styled';
 
 type Props = {
     movieName: string;
@@ -60,27 +61,27 @@ function CreateSearchResult( {movieName} : Props){
     
     return (
         <>
-            <div className="divCreate">
-            <form onSubmit={deleteSubmit}>
-                <label htmlFor="excludeId"></label>
-                <input name="excludeId" id="excludeId" className="createInput" placeholder="Identificador" required></input>
+            <C.ContainerCreate>
+                <form onSubmit={deleteSubmit}>
+                    <label htmlFor="excludeId"></label>
+                    <input name="excludeId" id="excludeId" className="createInput" placeholder="Identificador" required></input>
 
-                <label htmlFor="excludePass"></label>
-                <input type="password" name="excludePass" id="excludePass" className="createInput" placeholder="Senha" required></input>
+                    <label htmlFor="excludePass"></label>
+                    <input type="password" name="excludePass" id="excludePass" className="createInput" placeholder="Senha" required></input>
 
-                <button className="buttonCreate" type="submit" value="submit">Excluir</button>
-            </form>
-        </div>
+                    <button className="buttonCreate" type="submit" value="submit">Excluir</button>
+                </form>
+            </C.ContainerCreate>
 
-        <div className="divCreate">
+        <C.ContainerCreate>
             <form onSubmit={searchSubmit}>
                 <label htmlFor="pesquisaName"></label>
                 <input name="pesquisaName" id="pesquisaName" className="createInput" placeholder="Pesquise um filme"></input>
                 <button className="buttonCreate" type="submit" value="submit">Pesquisar</button>
             </form>
-        </div>
+        </C.ContainerCreate>
 
-        <div>
+        <C.ContainerDivTable>
             <table className="table theTable">
                 <thead>
                   <tr>
@@ -99,7 +100,7 @@ function CreateSearchResult( {movieName} : Props){
                 </tbody>
               </table>
             ))}
-        </div>
+        </C.ContainerDivTable>
         </>
     )
 }

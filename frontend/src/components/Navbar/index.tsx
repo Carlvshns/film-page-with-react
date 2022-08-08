@@ -1,6 +1,6 @@
 function Navbar() {
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const searchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
    
@@ -108,7 +108,7 @@ function Navbar() {
     return(
         <header>
             <nav className="navbar navbar-expand-sm" id="theNavbar">
-                <form className="form-inline"  id="theFormInNavbar" onSubmit={handleSubmit}>
+                <form className="form-inline"  id="theFormInNavbar" onSubmit={searchSubmit}>
                     <a href="https://github.com/Carlvshns" target="_blank" rel="noreferrer">
                         <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-bleu.png" alt="github-logo" id="gitLogo" />
                     </a>

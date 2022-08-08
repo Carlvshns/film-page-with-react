@@ -1,5 +1,7 @@
 package carl.dev.com.demo.endpoint;
 
+import javax.validation.Valid;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -53,7 +55,7 @@ public class MovieController {
 
     @ApiOperation(value = "List various Movies based on GENRE passed param")
     @ApiResponse(code = 200, message = "OK", response = MovieDTO[].class)
-    @GetMapping(path = "/findByGenre/{genre}", produces = "application/json")
+    @GetMapping(path = "/find-by-genre/{genre}", produces = "application/json")
     public ResponseEntity<Page<MovieDTO>> findByGenreIgnoreCaseContaining(@PathVariable String genre, Pageable pageable){
         return new ResponseEntity<>(movieService.findByGenreIgnoreCaseContaining(genre, pageable), HttpStatus.OK);
     }
@@ -61,7 +63,7 @@ public class MovieController {
     @ApiOperation(value = "Save Movie in Database(password is necessary in url)")
     @ApiResponse(code = 201, message = "CREATED/SAVED", response = MovieDTO.class)
     @PutMapping(path = "/create/{pass}", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<MovieDTO> save(@RequestBody Movie movie, @PathVariable String pass){
+    public ResponseEntity<MovieDTO> save(@Valid @RequestBody Movie movie, @PathVariable String pass){
         return new ResponseEntity<>(movieService.save(movie, pass), HttpStatus.CREATED);
     }
 
@@ -75,14 +77,14 @@ public class MovieController {
 
     @ApiOperation(value = "Return unique Movie based on NAME")
     @ApiResponse(code = 200, message = "OK", response = MovieDTO.class)
-    @GetMapping(path = "/findByName/{name}", produces = "application/json")
+    @GetMapping(path = "/find-by-name/{name}", produces = "application/json")
     public ResponseEntity<MovieDTO> findByName(@PathVariable String name){
         return ResponseEntity.ok(movieService.findByName(name));
     }
 
     @ApiOperation(value = "Return unique Movie based on UUID")
     @ApiResponse(code = 200, message = "OK", response = MovieDTO.class)
-    @GetMapping(path = "/findByUuid/{uuid}", produces = "application/json")
+    @GetMapping(path = "/find-by-uuid/{uuid}", produces = "application/json")
     public ResponseEntity<MovieDTO> findByUuid(@PathVariable String uuid){
         return ResponseEntity.ok(movieService.findByUuid(uuid));
     }

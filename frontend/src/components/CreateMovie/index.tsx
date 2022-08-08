@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { MoviePage } from "../../types/movie";
 import { BASE_URL } from "../../utils/requests";
 import './styles.css';
+import * as C from './styled';
 
 function CreateMovie () {
 
@@ -14,7 +15,7 @@ function CreateMovie () {
         const image = (event.target as any).createImage.value;
         const adress = (event.target as any).createAdress.value;
         const synopsis = (event.target as any).createSynopsis.value;
-        const genre = (event.target as any).createGenre.value;
+        const genre = (event.target as any).createGenre.value.toUpperCase();
         const uuid = (event.target as any).createUuid.value;
         
         const pass = (event.target as any).createPass.value; 
@@ -88,7 +89,7 @@ function CreateMovie () {
 
     return(
         <>
-            <div className="divCreate">
+            <C.ContainerCreate>
                 <form onSubmit={createSubmit}>
 
                     <label htmlFor="createName"></label>
@@ -112,31 +113,31 @@ function CreateMovie () {
                     <label htmlFor="createPass"></label>
                     <input type="password" name="createPass" id="createPass" className="createInput" placeholder="Senha" required></input>
 
-                <button className="buttonCreate" type="submit" value="submit">Adicionar</button>
-            </form>
-        </div>
+                    <button className="buttonCreate" type="submit" value="submit">Adicionar</button>
+                </form>
+            </C.ContainerCreate>
 
-        <div className="divCreate">
-            <form onSubmit={deleteSubmit}>
-                <label htmlFor="excludeId"></label>
-                <input name="excludeId" id="excludeId" className="createInput" placeholder="Identificador" required></input>
+            <C.ContainerCreate>
+                <form onSubmit={deleteSubmit}>
+                    <label htmlFor="excludeId"></label>
+                    <input name="excludeId" id="excludeId" className="createInput" placeholder="Identificador" required></input>
 
-                <label htmlFor="excludePass"></label>
-                <input type="password" name="excludePass" id="excludePass" className="createInput" placeholder="Senha" required></input>
+                    <label htmlFor="excludePass"></label>
+                    <input type="password" name="excludePass" id="excludePass" className="createInput" placeholder="Senha" required></input>
 
-                <button className="buttonCreate" type="submit" value="submit">Excluir</button>
-            </form>
-        </div>
+                    <button className="buttonCreate" type="submit" value="submit">Excluir</button>
+                </form>
+            </C.ContainerCreate>
 
-        <div className="divCreate">
+        <C.ContainerCreate>
             <form onSubmit={searchSubmit}>
                 <label htmlFor="pesquisaName"></label>
                 <input name="pesquisaName" id="pesquisaName" className="createInput" placeholder="Pesquise um filme"></input>
                 <button className="buttonCreate" type="submit" value="submit">Pesquisar</button>
             </form>
-        </div>
+        </C.ContainerCreate>
 
-        <div className="divTable">
+        <C.ContainerDivTable>
             <table className="table theTable">
                 <thead>
                   <tr>
@@ -155,7 +156,7 @@ function CreateMovie () {
                 </tbody>
               </table>
             ))}
-        </div>
+        </C.ContainerDivTable>
         </>
     )
 }

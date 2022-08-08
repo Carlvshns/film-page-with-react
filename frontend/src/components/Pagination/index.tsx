@@ -1,6 +1,7 @@
 import { MoviePage } from "../../types/movie";
 import {ReactComponent as Arrow} from '../../assets/img/arrow.svg';
 import './styles.css';
+import * as C from './styled';
 
 type Props = {
     page: MoviePage;
@@ -9,17 +10,17 @@ type Props = {
 
 function Pagination( {page, onChange} : Props){
     return(
-        <div className="pagination-container">
-            <div className="pagination-box">
+        <C.PaginationContainer>
+            <C.PaginationBox>
                 <button className="pagination-button" disabled={page.first} onClick={() => onChange(page.number - 1)}>
                     <Arrow className="flip-horizontal" />
                 </button>
-                <p id="pageNumbers">{`${page.number + 1} de ${page.totalPages}`}</p>
+                <C.PaginationPageNumbers id="pageNumbers">{`${page.number + 1} de ${page.totalPages}`}</C.PaginationPageNumbers>
                 <button className="pagination-button" disabled={page.last} onClick={() => onChange(page.number + 1)}>
                     <Arrow />
                 </button>
-            </div>
-        </div>
+            </C.PaginationBox>
+        </C.PaginationContainer>
     );
 }
 
