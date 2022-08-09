@@ -15,9 +15,10 @@ function CreateMovie () {
         const image = (event.target as any).createImage.value;
         const adress = (event.target as any).createAdress.value;
         const synopsis = (event.target as any).createSynopsis.value;
-        const genre = (event.target as any).createGenre.value.toUpperCase();
+        const genre = (event.target as any).createGenre.value;
         const uuid = (event.target as any).createUuid.value;
         
+        console.log(genre);
         const pass = (event.target as any).createPass.value; 
 
         const config: AxiosRequestConfig = {
@@ -105,7 +106,23 @@ function CreateMovie () {
                     <input name="createSynopsis" id="createSynopsis" className="createInput" placeholder="Sinopse" required></input>
 
                     <label htmlFor="createGenre"></label>
-                    <input name="createGenre" id="createGenre" className="createInput" placeholder="Genero" required></input>
+                    <select id="createGenre" className="createInput">    
+                        <option value="ACAO"> Ação</option>
+                        <option value="FILME DE ANIME">Anime</option>
+                        <option value="AVENTURA">Aventura</option>
+                        <option value="COMEDIA">Comedia</option>
+                        <option value="CRIME">Crime</option>
+                        <option value="DESENHO">Desenho</option>
+                        <option value="FANTASIA E ACAO">Fantasia e Ação</option>
+                        <option value="FANTASIA E AVENTURA">Fantasia e Aventura</option>
+                        <option value="FICCAO-CIENTIFICA">Fic-Cientifica</option>
+                        <option value="FICCAO-CIENTIFICA E SUSPENSE">Fic-Cientifica e Suspense</option>
+                        <option value="HISTORIA">Historis</option>
+                        <option value="QUADRINHOS">Quadrinhos</option>
+                        <option value="ROMANCE">Romance</option> 
+                        <option value="SUPER-HEROI">Super-Heroi</option>
+                        <option value="TERROR">Terror</option> 
+                    </select>
 
                     <label htmlFor="createUuid"></label>
                     <input name="createUuid" id="createUuid" className="createInput" placeholder="Uuid" required></input>

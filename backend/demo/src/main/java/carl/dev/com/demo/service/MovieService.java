@@ -62,8 +62,12 @@ public class MovieService {
         if(pass.equals(passphrase)){
             movieRepository.deleteById(id);
         }else{
-            throw new InvalidPassphraseException("Senha incorreta/Invalid password");
+            throwsInvalidPassphraseExceptionWhenPassIncorrect();
         }
+    }
+
+    private void throwsInvalidPassphraseExceptionWhenPassIncorrect(){
+        throw new InvalidPassphraseException("Senha incorreta/Invalid password");
     }
    
     public MovieDTO findByName(String name){
