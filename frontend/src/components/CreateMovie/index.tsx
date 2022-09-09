@@ -18,7 +18,6 @@ function CreateMovie () {
         const genre = (event.target as any).createGenre.value;
         const uuid = (event.target as any).createUuid.value;
         
-        console.log(genre);
         const pass = (event.target as any).createPass.value; 
 
         const config: AxiosRequestConfig = {
